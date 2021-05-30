@@ -1,9 +1,9 @@
 
-#' Title
-#' capitalize first letter of first word in each sentence
-#' @param script
+#' capitalize the first letter of first word in each sentence
 #'
-#' @return
+#' @param script character
+#'
+#' @return character
 #' @export
 #'
 #' @examples
@@ -27,11 +27,11 @@ capitalize_sentences = function(script){
   return(script)
 }
 
-#' Title
-#' capitalize first letter of every word in headings
-#' @param script
+#' capitalize the first letter of the first word in rmd headings
 #'
-#' @return
+#' @param script character
+#'
+#' @return character
 #' @export
 #'
 #' @examples
@@ -52,15 +52,14 @@ capitalize_headings = function(script){
   return(script)
 }
 
-# formalize_writing("test.Rmd")
-#' Title
+#' apply functions capitalize_headings() and capitalize_sentences() to an existing rmd
 #'
 #' @param filename
 #'
 #' @return
 #' @export
 #'
-#' @examples
+#' @importFrom magrittr "%>%"
 formalize_writing = function(filename, output_filename = filename){
   script = readLines(filename) # each line will be a string. grap strings with period in it. capitalize the first character, and first character 1 space after each period
   script = script %>%

@@ -2,20 +2,18 @@
 % Please edit documentation in R/writing.R
 \name{capitalize_sentences}
 \alias{capitalize_sentences}
-\title{Title
-capitalize first letter of first word in each sentence}
+\title{capitalize the first letter of first word in each sentence}
 \usage{
 capitalize_sentences(script)
 }
 \arguments{
-\item{script}{}
+\item{script}{character}
 }
 \value{
-
+character
 }
 \description{
-Title
-capitalize first letter of first word in each sentence
+capitalize the first letter of first word in each sentence
 }
 \examples{
 capitalize_sentences("you are human. you really are. ")

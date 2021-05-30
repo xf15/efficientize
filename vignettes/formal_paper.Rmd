@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Introduction
 
 
-Each line will be a string. Grap strings with period in it.
+You are human. You really are.
 ```{r}
 
 1 + 1
