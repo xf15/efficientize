@@ -2,3 +2,5 @@
 
 export(capitalize_headings)
 export(capitalize_sentences)
+
+#' @importFrom magrittr "%>%"

@@ -2,7 +2,8 @@
 % Please edit documentation in R/writing.R
 \name{capitalize_headings}
 \alias{capitalize_headings}
-\title{Title}
+\title{Title
+capitalize first letter of every word in headings}
 \usage{
 capitalize_headings(script)
 }
@@ -14,4 +15,8 @@ capitalize_headings(script)
 }
 \description{
 Title
+capitalize first letter of every word in headings
+}
+\examples{
+capitalize_headings("### introduction")
 }

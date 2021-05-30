@@ -8,10 +8,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# introduction
+# Introduction
 
 
-each line will be a string. Grap strings with period in it.
+Each line will be a string. Grap strings with period in it.
 ```{r}
 
 1 + 1
