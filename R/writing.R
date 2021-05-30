@@ -4,13 +4,14 @@ filename = "test.Rmd"
 script = readLines(filename) # each line will be a string. grap strings with period in it. capitalize the first character, and first character 1 space after each period
 
 #' Title
-#'
+#' capitalize first letter of first word in each sentence
 #' @param script
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' capitalize_sentences("you are human. you really are. ")
 capitalize_sentences = function(script){
   # script = "you are human. you really are. "
   num_str = length(script)
@@ -31,13 +32,14 @@ capitalize_sentences = function(script){
 }
 
 #' Title
-#'
+#' capitalize first letter of every word in headings
 #' @param script
 #'
 #' @return
 #' @export
 #'
-#' @examples
+#' @examples 
+#' capitalize_headings("### introduction")
 capitalize_headings = function(script){
   # script = "### introduction"
   num_str = length(script)
