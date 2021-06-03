@@ -1,5 +1,5 @@
 
-#' capitalize the first letter of first word in each sentence
+#' capitalize the first letter of the first word in each sentence
 #'
 #' @param script character
 #'

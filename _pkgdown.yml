@@ -1,0 +1,21 @@
+template:
+  params:
+    bootswatch: sandstone
+
+
+navbar:
+  left:
+    - text: "writing help"
+      href: "articles/writing_help.html"
+    - text: "Reference"
+      href: "reference/index.html"
+
+reference:
+- title: "writing help"
+  desc: >
+    make writing meets foramlities
+- contents:
+  - starts_with("capitalize")
+  - formalize_writing
+
+
