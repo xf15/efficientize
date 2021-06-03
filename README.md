@@ -9,7 +9,7 @@
 
 Efficientize the Life of a Scientist
 
-## Functionality
+## Functions
 
   - writing help
       - capitalize the first letter of the first word in each sentence
