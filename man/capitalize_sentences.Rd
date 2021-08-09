@@ -2,7 +2,7 @@
 % Please edit documentation in R/writing.R
 \name{capitalize_sentences}
 \alias{capitalize_sentences}
-\title{capitalize the first letter of first word in each sentence}
+\title{capitalize the first letter of the first word in each sentence}
 \usage{
 capitalize_sentences(script)
 }
@@ -13,8 +13,8 @@ capitalize_sentences(script)
 character
 }
 \description{
-capitalize the first letter of first word in each sentence
+capitalize the first letter of the first word in each sentence
 }
 \examples{
-capitalize_sentences("you are human. you really are. ")
+capitalize_sentences("how are you? thank you. i am fine. and you?")
 }

@@ -7,23 +7,77 @@
 #' @export
 #'
 #' @examples
-#' capitalize_sentences("you are human. you really are. ")
+#' capitalize_sentences("how are you? thank you. i am fine. and you?")
 capitalize_sentences = function(script){
-  # script = "you are human. you really are. "
-  num_str = length(script)
-  for (iStr in 1: num_str){
-    x = script[iStr]
-    period_positions = stringr::str_locate_all(x, "\\.")[[1]]
-    if(length(period_positions) != 0){
-      num_sent = nrow(period_positions)
+  # script = "how are you? thank you. i am fine. and you?"
+  #   script = "how are you? thank you. i am fine. and you?
+  # ```{r}
+  # L3 <- LETTERS[1:3]
+  # fac <- sample(L3, 10, replace = TRUE)
+  # d <- data.frame(x = 1, y = 1:10, fac = fac)
+  # ```
+  #
+  # # method
+  #
+  # ```{r}
+  # # i am just a comment. my initial doesn't really need to be capitalized but i don't mind if it happpens.
+  # 1 + 1
+  # ```"
 
-      stringr::str_sub(x, 1, 1) = toupper(stringr::str_sub(x, 1, 1))
-      for(iSent in 1: (num_sent-1)){
-        stringr::str_sub(x, period_positions[iSent, "start"]+2, period_positions[iSent, "end"]+2) = toupper(stringr::str_sub(x, period_positions[iSent, "start"]+2, period_positions[iSent, "end"]+2))
-      }
-      script[iStr] = x
+  # capitalize the first character
+  stringr::str_sub(script, 1, 1) = toupper(stringr::str_sub(script, 1, 1))
+
+  # capitalize every character following a period and a space
+
+  period_positions = rbind(stringr::str_locate_all(script, "\\. ")[[1]], stringr::str_locate_all(script, "\\? ")[[1]])
+
+  num_sent = nrow(period_positions)
+
+
+  if(num_sent != 0){
+
+    for(iSent in 1: num_sent){
+      stringr::str_sub(script, period_positions[iSent, "start"]+2, period_positions[iSent, "end"]+1) = toupper(stringr::str_sub(script, period_positions[iSent, "start"]+2, period_positions[iSent, "end"]+1))
     }
   }
+
+  # print(script)
+  # capitalize every character following a newline except those in rchunk
+
+  newline_position = stringr::str_locate_all(script, "\n")[[1]]
+
+  if(stringr::str_detect(script, "```")){
+    rchunk_start_positions = stringr::str_locate_all(script, "```\\{")[[1]][, "start"]
+    # subtract second set from first set
+    rchunk_end_positions =  setdiff(stringr::str_locate_all(script, "```")[[1]][, "start"], rchunk_start_positions)
+
+    # if moore than one chunk, will get In addition: Warning message:
+    # In if (!is.na(rchunk_start_positions)) { :
+    # the condition has length > 1 and only the first element will be used
+    if(sum(!is.na(rchunk_start_positions))>0){
+      exempt_positions = c()
+      num_rchunk = length(rchunk_start_positions)
+      for(iR in 1:num_rchunk){
+        exempt_positions = c(exempt_positions, rchunk_start_positions[iR]:rchunk_end_positions[iR])
+      }
+    }
+    # print(newline_position)
+
+    # take out those in rchunk
+    newline_position = newline_position[!(newline_position %in% exempt_positions)]
+  }
+
+
+
+  # print(newline_position)
+  if(length(newline_position ) != 0){
+    num_sent = length(newline_position )
+
+    for(iSent in 1: num_sent){
+      stringr::str_sub(script, newline_position [iSent]+1, newline_position [iSent]+1) = toupper(stringr::str_sub(script, newline_position [iSent]+1, newline_position [iSent]+1))
+    }
+  }
+
   return(script)
 }
 
@@ -38,17 +92,16 @@ capitalize_sentences = function(script){
 #' capitalize_headings("### introduction")
 capitalize_headings = function(script){
   # script = "### introduction"
-  num_str = length(script)
-  for (iStr in 1: num_str){
-    x = script[iStr]
-    pond_positions = stringr::str_locate_all(x, "#")[[1]]
-    if(length(pond_positions) != 0){
-      num_pond = nrow(pond_positions)
 
-      stringr::str_sub(x, pond_positions[num_pond, "start"]+2, pond_positions[num_pond, "end"]+2) = toupper(stringr::str_sub(x, pond_positions[num_pond, "start"]+2, pond_positions[num_pond, "end"]+2))
-      script[iStr] = x
+  pound_positions = stringr::str_locate_all(script, "# ")[[1]]
+  if(length(pound_positions) != 0){
+    num_pound = nrow(pound_positions)
+    for(iPound in 1: num_pound){
+      stringr::str_sub(script, pound_positions[iPound, "start"]+2, pound_positions[iPound, "end"]+1) = toupper(stringr::str_sub(script, pound_positions[iPound, "start"]+2, pound_positions[iPound, "end"]+1))
+
     }
   }
+
   return(script)
 }
 
@@ -61,13 +114,14 @@ capitalize_headings = function(script){
 #'
 #' @importFrom magrittr "%>%"
 formalize_writing = function(filename, output_filename = filename){
-  script = readLines(filename) # each line will be a string. grap strings with period in it. capitalize the first character, and first character 1 space after each period
-  script = script %>%
+  # filename = "vignette/informal_paper.Rmd"
+  old_script = readChar(filename, file.info(filename)$size)
+  new_script = old_script %>%
     capitalize_headings() %>%
     capitalize_sentences()
 
   fileConn = file(output_filename)
-  writeLines(script, fileConn)
+  writeLines(new_script, fileConn)
   close(fileConn)
 }
 

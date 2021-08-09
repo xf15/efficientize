@@ -14,8 +14,9 @@ Efficientize the Life of a Scientist
   - writing help
       - capitalize the first letter of the first word in each sentence
       - capitalize the first letter of the first word in rmd headings
-
-## Installation
+  - todo
+      - maybe replace certain words? already my\_dict.csv in R, nothing
+        in it yet. \#\# Installation
 
 I don’t expect this to ever be on CRAN
 
