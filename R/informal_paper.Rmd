@@ -14,5 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 you are human. you really are.
 ```{r}
 
-1 + 1
+L3 <- LETTERS[1:3]
+fac <- sample(L3, 10, replace = TRUE)
+d <- data.frame(x = 1, y = 1:10, fac = fac)
+
 ```
