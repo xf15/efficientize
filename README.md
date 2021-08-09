@@ -16,7 +16,9 @@ Efficientize the Life of a Scientist
       - capitalize the first letter of the first word in rmd headings
   - todo
       - maybe replace certain words? already my\_dict.csv in R, nothing
-        in it yet. \#\# Installation
+        in it yet.
+
+## Installation
 
 I don’t expect this to ever be on CRAN
 
