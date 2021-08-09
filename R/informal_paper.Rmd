@@ -19,3 +19,11 @@ fac <- sample(L3, 10, replace = TRUE)
 d <- data.frame(x = 1, y = 1:10, fac = fac)
 
 ```
+
+# method 
+
+```{r}
+
+1 + 1
+
+```
