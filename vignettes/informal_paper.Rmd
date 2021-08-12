@@ -2,7 +2,7 @@
 title: ''
 output: 
   html_document
-  # pdf_document:
+  # pdf_document
 ---
 
 ```{r setup, include=FALSE}
