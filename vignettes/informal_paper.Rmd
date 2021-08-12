@@ -26,3 +26,7 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 # i am just a comment. my initial doesn't really need to be capitalized but i don't mind if it happens.
 1 + 1
 ```
+
+$$
+p(\theta_i|x, c) \propto p(x|\theta_i, c) p(\theta_i)
+$$

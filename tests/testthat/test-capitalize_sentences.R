@@ -46,3 +46,36 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 ```"
   expect_equal(capitalize_sentences(input), output)
 })
+
+
+
+test_that("capitalize first letter of first word in each sentence", {
+  input = "---
+title: 'Talker-general vs. Talker-specific Acoustic-phonetic Mappings during Speech Comprehension'
+output:
+  # html_document:
+  # pdf_document:
+  bookdown::pdf_document2:
+    toc: no
+    latex_engine: xelatex
+    number_sections: true
+bibliography: zotero.bib
+csl: apa-6th-edition.csl
+---"
+  output = "---
+title: 'Talker-general vs. Talker-specific Acoustic-phonetic Mappings during Speech Comprehension'
+output:
+  # html_document:
+  # pdf_document:
+  bookdown::pdf_document2:
+    toc: no
+    latex_engine: xelatex
+    number_sections: true
+bibliography: zotero.bib
+csl: apa-6th-edition.csl
+---"
+  expect_equal(capitalize_sentences(input), output)
+})
+
+
+

@@ -17,6 +17,9 @@ Efficientize the Life of a Scientist
   - todo
       - maybe replace certain words? already my\_dict.csv in R, nothing
         in it yet.
+      - rn commented out code chunk initial capitalized too
+          - probable solution: remove the heading capitalization
+            function, do that by hand
 
 ## Installation
 

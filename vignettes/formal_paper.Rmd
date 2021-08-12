@@ -1,6 +1,6 @@
 ---
-Title: ''
-Output: html_document
+title: ''
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -26,4 +26,8 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 # I am just a comment. My initial doesn't really need to be capitalized but i don't mind if it happens.
 1 + 1
 ```
+
+$$
+p(\theta_i|x, c) \propto p(x|\theta_i, c) p(\theta_i)
+$$
 

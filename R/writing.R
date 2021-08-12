@@ -41,7 +41,6 @@ capitalize_sentences = function(script){
     }
   }
 
-  # print(script)
   # capitalize every character following a newline except those in rchunk
 
   newline_position = stringr::str_locate_all(script, "\n")[[1]]
@@ -50,6 +49,10 @@ capitalize_sentences = function(script){
     rchunk_start_positions = stringr::str_locate_all(script, "```\\{")[[1]][, "start"]
     # subtract second set from first set
     rchunk_end_positions =  setdiff(stringr::str_locate_all(script, "```")[[1]][, "start"], rchunk_start_positions)
+
+    if(length(rchunk_start_positions) != length(rchunk_end_positions)){
+      stop("you got ``` in your comments, remove those, search for # ``` may help")
+    }
 
     # if moore than one chunk, will get In addition: Warning message:
     # In if (!is.na(rchunk_start_positions)) { :
@@ -63,10 +66,34 @@ capitalize_sentences = function(script){
     }
     # print(newline_position)
 
-    # take out those in rchunk
-    newline_position = newline_position[!(newline_position %in% exempt_positions)]
   }
 
+  # those in yaml header
+  if(stringr::str_detect(script, "---")){
+
+    yaml_chunk_postions = stringr::str_locate_all(script, "---")[[1]]
+    exempt_positions = c(exempt_positions, yaml_chunk_postions[1, 'start']: yaml_chunk_postions[2, 'end'])
+
+  }
+  # those in latex expression
+  if(stringr::str_detect(script, "\\$\\$")){
+    latex_positions = stringr::str_locate_all(script, "\\$\\$")[[1]]
+    num_marks = nrow(latex_positions)
+    if(num_marks %% 2 != 0){
+      stop("you got $$ in your comments, remove those, search for # $$ may help")
+    }
+    latex_start_positions =  stringr::str_locate_all(script, "\\$\\$")[[1]][seq(1, num_marks, 2), "start"]
+    latex_end_positions =  stringr::str_locate_all(script, "\\$\\$")[[1]][seq(2, num_marks, 2), "start"]
+
+    if(sum(!is.na(latex_start_positions))>0){
+      num_latex = length(latex_start_positions)
+      for(iR in 1:num_latex){
+        exempt_positions = c(exempt_positions, latex_start_positions[iR]:latex_end_positions[iR])
+      }
+    }
+  }
+
+  newline_position = newline_position[!(newline_position %in% exempt_positions)]
 
 
   # print(newline_position)
@@ -114,14 +141,18 @@ capitalize_headings = function(script){
 #'
 #' @importFrom magrittr "%>%"
 formalize_writing = function(filename, output_filename = filename){
-  # filename = "vignette/informal_paper.Rmd"
-  old_script = readChar(filename, file.info(filename)$size)
-  new_script = old_script %>%
+  # filename = "vignettes/informal_paper.Rmd"
+  # filename = "../cindy_writing/speech2.rmd"
+  # formalize_writing("vignettes/informal_paper.Rmd", "vignettes/formal_paper.Rmd")
+
+
+  script = readChar(filename, file.info(filename)$size)
+  script = script %>%
     capitalize_headings() %>%
     capitalize_sentences()
 
   fileConn = file(output_filename)
-  writeLines(new_script, fileConn)
+  writeLines(script, fileConn)
   close(fileConn)
 }
 
