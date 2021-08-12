@@ -1,6 +1,8 @@
 ---
 title: ''
-output: html_document
+output: 
+  html_document
+  # pdf_document:
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +25,7 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 # method
 
 ```{r}
-# i am just a comment. my initial doesn't really need to be capitalized but i don't mind if it happens.
+# i am just a comment. my initial doesn't need to be capitalized. or do i?
 1 + 1
 ```
 

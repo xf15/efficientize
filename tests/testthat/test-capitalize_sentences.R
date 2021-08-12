@@ -22,7 +22,7 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 # method
 
 ```{r}
-# i am just a comment. my initial doesn't really need to be capitalized but i don't mind if it happens.
+# i am just a comment. my initial doesn't need to be capitalized. or do i?
 1 + 1
 ```"
   output = "# introduction
@@ -41,7 +41,7 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 # method
 
 ```{r}
-# i am just a comment. My initial doesn't really need to be capitalized but i don't mind if it happens.
+# i am just a comment. My initial doesn't need to be capitalized. Or do i?
 1 + 1
 ```"
   expect_equal(capitalize_sentences(input), output)
@@ -49,33 +49,6 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 
 
 
-test_that("capitalize first letter of first word in each sentence", {
-  input = "---
-title: 'Talker-general vs. Talker-specific Acoustic-phonetic Mappings during Speech Comprehension'
-output:
-  # html_document:
-  # pdf_document:
-  bookdown::pdf_document2:
-    toc: no
-    latex_engine: xelatex
-    number_sections: true
-bibliography: zotero.bib
-csl: apa-6th-edition.csl
----"
-  output = "---
-title: 'Talker-general vs. Talker-specific Acoustic-phonetic Mappings during Speech Comprehension'
-output:
-  # html_document:
-  # pdf_document:
-  bookdown::pdf_document2:
-    toc: no
-    latex_engine: xelatex
-    number_sections: true
-bibliography: zotero.bib
-csl: apa-6th-edition.csl
----"
-  expect_equal(capitalize_sentences(input), output)
-})
 
 
 

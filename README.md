@@ -17,9 +17,6 @@ Efficientize the Life of a Scientist
   - todo
       - maybe replace certain words? already my\_dict.csv in R, nothing
         in it yet.
-      - rn commented out code chunk initial capitalized too
-          - probable solution: remove the heading capitalization
-            function, do that by hand
 
 ## Installation
 
@@ -63,3 +60,8 @@ devtools::install_github("xf15/efficientize")
 <!-- ``` -->
 
 <!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN. -->
+
+## development note
+
+str\_locate\_all gives named matrix, find dealt with as matrix searching
+nrow, rest dealt with as vector
