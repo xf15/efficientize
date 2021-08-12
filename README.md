@@ -65,3 +65,7 @@ devtools::install_github("xf15/efficientize")
 
 str\_locate\_all gives named matrix, find dealt with as matrix searching
 nrow, rest dealt with as vector
+
+substr
+
+<https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf>

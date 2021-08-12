@@ -67,3 +67,7 @@ https://xf15.github.io/efficientize/index.html
 
 ## development note 
 str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector 
+
+substr 
+
+https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf

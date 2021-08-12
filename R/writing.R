@@ -110,7 +110,7 @@ capitalize_sentences = function(script){
   character_after_new_line_position = character_after_new_line_position[!(character_after_new_line_position %in% exempt_position)]
 
 
-  print(character_after_new_line_position)
+  # print(character_after_new_line_position)
   if(length(character_after_new_line_position ) != 0){
     num_sent = length(character_after_new_line_position )
 
