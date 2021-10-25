@@ -1,3 +1,25 @@
+replace_based_on_dict = function(target_filename, dict_filename){
+  # efficientize:: replace_based_on_dict("/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2.py", 'dict_psychopy_interface')
+
+  script = readChar(target_filename, file.info(target_filename)$size)
+  data(list = c(dict_filename)) # The ability to specify a dataset by name (without quotes) is NOT a convenience. if i do data(dict_filename) i get In data(dict_filename) : data set ‘dict_filename’ not found
+  eval(parse(text = paste0(c("df_dict =", dict_filename))))
+
+  # print(dict_psychopy_interface)
+  # print(dict_writing)
+
+  print(df_dict)
+  # df_dict = read.csv(dict_filename)
+  for(iRow in 1:nrow(df_dict)){
+    print(df_dict[iRow,"old"])
+    script = stringr::str_replace_all(script, df_dict[iRow,"old"], df_dict[iRow, "new"])
+  }
+  fileConn = file(target_filename)
+  writeLines(script, fileConn)
+  close(fileConn)
+}
+
+
 exempt_rchunk = function(script){
   exempt_position = c()
 
