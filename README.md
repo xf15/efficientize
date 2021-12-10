@@ -17,6 +17,10 @@ Efficientize the Life of a Scientist
   - todo
       - maybe replace certain words? already my\_dict.csv in R, nothing
         in it yet. i need this feature for interface.py list_all, replace(target_file_name, dict_file_name). psychopy_dict.csv, writing_dict.csv
+        
+        move in bashrc file from temp 
+        
+        copy .Rprofile to all dir containing .Rproject, drafting this in TWOI
 
 ## Installation
 
