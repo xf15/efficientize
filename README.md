@@ -21,6 +21,8 @@ Efficientize the Life of a Scientist
         move in bashrc file from temp 
         
         copy .Rprofile to all dir containing .Rproject, drafting this in TWOI
+        
+        in rmd, repace {r with {r, include = FALSE, message = FALSE https://yihui.org/knitr/options/
 
 ## Installation
 
