@@ -18,11 +18,18 @@ Efficientize the Life of a Scientist
       - maybe replace certain words? already my\_dict.csv in R, nothing
         in it yet. i need this feature for interface.py list_all, replace(target_file_name, dict_file_name). psychopy_dict.csv, writing_dict.csv
         
+        manual.bib Ryskin, R., & Fedorenko, E. (October, 2020). Individual-subject functional localization does not benefit ERP analyses. Poster at Society for the Neurobiology of Language. [PDF]
+
+
+        
+        infrastructure module 
+        
         move in bashrc file from temp 
         
         copy .Rprofile to all dir containing .Rproject, drafting this in TWOI
         
-        in rmd, repace {r with {r, include = FALSE, message = FALSE https://yihui.org/knitr/options/
+        
+        
 
 ## Installation
 
