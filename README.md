@@ -20,6 +20,8 @@ Efficientize the Life of a Scientist
         
         
         under communiation module, there is manuscript, slides, poster
+        
+        formalize writing, by defualt, 2nd arg same as 1st arg 
 
 
         
