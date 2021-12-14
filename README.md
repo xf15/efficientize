@@ -23,6 +23,7 @@ Efficientize the Life of a Scientist
         
         formalize writing, by defualt, 2nd arg same as 1st arg 
 
+        how am i handeling caption, somehow after period capitalized (i thought those exempted??), but first character, after fig.cap=", caption="
 
         
         infrastructure module 
