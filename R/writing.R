@@ -1,9 +1,22 @@
-replace_based_on_dict = function(target_filename, dict_filename){
+#' when called by formalize_writing, replace shorthands with full spelling. when called by modify_code, replace whatever it is needed, here are some occasions: modify psychopy script used for a single list for exp combining all lists.
+#'
+#' @param target character
+#'
+#' @param dict_filename character
+#'
+#' @return character
+#' @export
+replace_based_on_dict = function(script){
   # efficientize:: replace_based_on_dict("/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2.py", 'dict_psychopy_interface')
-
   script = readChar(target_filename, file.info(target_filename)$size)
   data(list = c(dict_filename)) # The ability to specify a dataset by name (without quotes) is NOT a convenience. if i do data(dict_filename) i get In data(dict_filename) : data set ‘dict_filename’ not found
   eval(parse(text = paste0(c("df_dict =", dict_filename))))
+  # files ending ‘.csv’ or ‘.CSV’ are read using read.table(..., header = TRUE, sep = ";", as.is=FALSE), and also result in a data frame.
+  # https://kbroman.org/pkg_primer/pages/data.html
+  # https://www.davekleinschmidt.com/r-packages/#fn1
+  # todo stuck at https://stackoverflow.com/questions/30148254/r-read-table-with-quotation-marks will probably have to go kleinschmidt way
+
+
 
   # print(dict_psychopy_interface)
   # print(dict_writing)
@@ -14,6 +27,8 @@ replace_based_on_dict = function(target_filename, dict_filename){
     print(df_dict[iRow,"old"])
     script = stringr::str_replace_all(script, df_dict[iRow,"old"], df_dict[iRow, "new"])
   }
+
+  return(script)
   fileConn = file(target_filename)
   writeLines(script, fileConn)
   close(fileConn)
@@ -33,7 +48,7 @@ exempt_rchunk = function(script){
       stop("you got ``` in your comments, remove those, search for # ``` may help")
     }
 
-    # if moore than one chunk, will get In addition: Warning message:
+    # if more than one chunk, will get In addition: Warning message:
     # In if (!is.na(rchunk_start_position)) { :
     # the condition has length > 1 and only the first element will be used
     if(sum(!is.na(rchunk_start_position))>0){
@@ -60,7 +75,7 @@ exempt_yaml_header = function(script){
 
   }
 }
-#' capitalize the first letter of the first word in each sentence
+#' capitalize the first letter of the first word in each sentence, by finding ". ", "! ", "'" in text and capitalize the first character following them, by finding "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them, and by handing a few special occasions: the very first character. This doesn't take of after """. so try to use single quote
 #'
 #' @param script character
 #'
@@ -70,27 +85,14 @@ exempt_yaml_header = function(script){
 #' @examples
 #' capitalize_sentences("how are you? thank you. i am fine. and you?")
 capitalize_sentences = function(script){
-  # script = "how are you? thank you. i am fine. and you?"
-  #   script = "how are you? thank you. i am fine. and you?
-  # ```{r}
-  # L3 <- LETTERS[1:3]
-  # fac <- sample(L3, 10, replace = TRUE)
-  # d <- data.frame(x = 1, y = 1:10, fac = fac)
-  # ```
-  #
-  # # method
-  #
-  # ```{r}
-  # # i am just a comment. my initial doesn't really need to be capitalized but i don't mind if it happpens.
-  # 1 + 1
-  # ```"
+
 
   # capitalize the first character
   stringr::str_sub(script, 1, 1) = toupper(stringr::str_sub(script, 1, 1))
 
-  # capitalize every character following a period and a space
+  # finding ". ", "! ", "'" in text and capitalize the first character following them
 
-  period_position = rbind(stringr::str_locate_all(script, "\\. ")[[1]], stringr::str_locate_all(script, "\\? ")[[1]])
+  period_position = rbind(stringr::str_locate_all(script, "\\. ")[[1]], stringr::str_locate_all(script, "\\? ")[[1]], stringr::str_locate_all(script, "\\' ")[[1]])
 
   num_sent = nrow(period_position)
 
@@ -154,7 +156,6 @@ capitalize_sentences = function(script){
 #' @examples
 #' capitalize_headings("### introduction")
 capitalize_headings = function(script){
-  # script = "### introduction"
 
   character_after_pound_position = stringr::str_locate_all(script, "# ")[[1]][, "end"] + 1
 
@@ -183,9 +184,7 @@ capitalize_headings = function(script){
 #'
 #' @importFrom magrittr "%>%"
 formalize_writing = function(filename, output_filename = filename){
-  # filename = "vignettes/informal_paper.Rmd"
-  # filename = "../cindy_writing/speech2.rmd"
-  # formalize_writing("vignettes/informal_paper.Rmd", "vignettes/formal_paper.Rmd")
+
 
 
   script = readChar(filename, file.info(filename)$size)

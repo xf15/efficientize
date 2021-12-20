@@ -1,11 +1,11 @@
-test_that("capitalize first letter of first word in each sentence", {
+test_that("sentence capitalization for one line", {
   input = "how are you? thank you. i am fine. and you?"
   output = "How are you? Thank you. I am fine. And you?"
   expect_equal(capitalize_sentences(input), output)
 })
 
 
-test_that("capitalize first letter of first word in each sentence", {
+test_that("sentence capitalization for multiple lines", {
   input = "# introduction
 
 

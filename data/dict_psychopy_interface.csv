@@ -1,3 +1,3 @@
-old, new
-'tAll_blocks.csv', 'ideal_adapter_exp2_List' + expInfo['session'] + '_tAll_blocks.csv'
-block_file_name, 'ideal_adapter_exp2_List' + expInfo['session'] + '_' + block_file_name
+old; new
+'tAll_blocks.csv'; 'ideal_adapter_exp2_List' + expInfo[\"session\"] + '_tAll_blocks.csv'
+block_file_name; 'ideal_adapter_exp2_List' + expInfo['session'] + '_' + block_file_name
