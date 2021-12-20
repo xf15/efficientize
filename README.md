@@ -15,7 +15,25 @@ Efficientize the Life of a Scientist
       - capitalize the first letter of the first word in each sentence
       - capitalize the first letter of the first word in rmd headings
   - todo
-      - developing word replacing 
+      - maybe replace certain words? already my\_dict.csv in R, nothing
+        in it yet. i need this feature for interface.py list_all, replace(target_file_name, dict_file_name). psychopy_dict.csv, writing_dict.csv
+        
+        
+        under communiation module, there is manuscript, slides, poster
+        
+        formalize writing, by defualt, 2nd arg same as 1st arg 
+
+        how am i handeling caption, somehow after period capitalized (i thought those exempted??), but first character, after fig.cap=", caption="
+
+        
+        infrastructure module 
+        
+        move in bashrc file from temp 
+        
+        copy .Rprofile to all dir containing .Rproject, drafting this in TWOI
+        
+        
+        
 
 ## Installation
 
