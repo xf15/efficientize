@@ -20,13 +20,17 @@ knitr::opts_chunk$set(
 
 Efficientize the Life of a Scientist
 
+
+
 ## Functions
 
-* writing help
+* writing_help
   * capitalize the first letter of the first word in each sentence
   * capitalize the first letter of the first word in rmd headings
+  * replace shorthands with full spellings
 * todo 
-  * maybe replace certain words? already my_dict.csv in R, nothing in it yet. 
+  * replace current esl examples with more scientific ones, or not, don't think i would make this package were i native speaker 
+  * dict_psyexp.csv is there, not add added to create_dict.r, data.r, or tested yet 
  
 ## Installation
 
@@ -66,6 +70,11 @@ https://xf15.github.io/efficientize/index.html
 <!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN. -->
 
 ## development note 
+
+consistent function documentation among readme, writing_help.rmd, writing_help.r 
+
+consistent data documentation between data.r and writing_help.r 
+
 str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector 
 
 substr 

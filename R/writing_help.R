@@ -1,37 +1,39 @@
-#' when called by formalize_writing, replace shorthands with full spelling. when called by modify_code, replace whatever it is needed, here are some occasions: modify psychopy script used for a single list for exp combining all lists.
+#' replace strings referring to "dictionary" in csv resides in /data. i use it in two scenarios, for writing
+#' replace shorthands with full spellings
+#' , for code, e.g.,
+#' modify psychopy script used for a single list to be used as script for task combining all lists
+#' . unless specified which csv dict to use, go through all of them -- easiest to code and no harm. if you want to use this feature, you should fork my repo, replace my csv with your own, and install your repo
 #'
-#' @param target character
 #'
-#' @param dict_filename character
+#'
+#' @param script character
 #'
 #' @return character
+#'
+#' @examples
+#' replace_based_on_dict("/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2.py", 'dict_psyexp.csv')
+#'
 #' @export
-replace_based_on_dict = function(script){
-  # efficientize:: replace_based_on_dict("/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2.py", 'dict_psychopy_interface')
-  script = readChar(target_filename, file.info(target_filename)$size)
-  data(list = c(dict_filename)) # The ability to specify a dataset by name (without quotes) is NOT a convenience. if i do data(dict_filename) i get In data(dict_filename) : data set ‘dict_filename’ not found
-  eval(parse(text = paste0(c("df_dict =", dict_filename))))
-  # files ending ‘.csv’ or ‘.CSV’ are read using read.table(..., header = TRUE, sep = ";", as.is=FALSE), and also result in a data frame.
-  # https://kbroman.org/pkg_primer/pages/data.html
-  # https://www.davekleinschmidt.com/r-packages/#fn1
-  # todo stuck at https://stackoverflow.com/questions/30148254/r-read-table-with-quotation-marks will probably have to go kleinschmidt way
+replace_based_on_dict = function(script, dict_filenames = c('dict_writing.rda')){
+  df_dict_names = stringr::str_sub(dict_filenames, 1, -5)
+  num_dict = length(dict_filenames)
 
+  # end up not using
+  # https://rdrr.io/r/utils/data.html
+  # because the parameters it passes to read.table doesn't include quote="\"" to exempt single quote, cannot handle single quote in my code csv. others annoying things are it uses ; not , as sep; it convert string to factors
+  # https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/
+  data(list = c(df_dict_names)) # The ability to specify a dataset by name (without quotes) is NOT a convenience. if i do data(dict_filename) i get warning message In data(dict_filename) : data set ‘dict_filename’ not found
 
+  # also cannot simply place csv in data and just do dict_filenames = list.files(file.path(find.package("efficientize"),'data'), pattern="*csv" and then later read.csv(file.path(find.package("efficientize"),'data', dict_filenames[iDict])) because check() returns cannot open file '/private/var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T/Rtmpp7sS7M/efficientize.Rcheck/efficientize/data/NA': No such file or directory
 
-  # print(dict_psychopy_interface)
-  # print(dict_writing)
-
-  print(df_dict)
-  # df_dict = read.csv(dict_filename)
-  for(iRow in 1:nrow(df_dict)){
-    print(df_dict[iRow,"old"])
-    script = stringr::str_replace_all(script, df_dict[iRow,"old"], df_dict[iRow, "new"])
+  for(iDict in c(1: num_dict)){
+    eval(parse(text = paste0(c("df_dict =", df_dict_names[iDict]))))
+    for(iRow in 1:nrow(df_dict)){
+      script = stringr::str_replace_all(script, df_dict[iRow,"old"], df_dict[iRow, "new"])
+    }
   }
 
   return(script)
-  fileConn = file(target_filename)
-  writeLines(script, fileConn)
-  close(fileConn)
 }
 
 
@@ -75,15 +77,17 @@ exempt_yaml_header = function(script){
 
   }
 }
-#' capitalize the first letter of the first word in each sentence, by finding ". ", "! ", "'" in text and capitalize the first character following them, by finding "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them, and by handing a few special occasions: the very first character. This doesn't take of after """. so try to use single quote
+#' capitalize the first letter of the first word in each sentence
+#' by finding ". ", "! ", "'" in text and capitalize the first character following them, by finding "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them, and by handing a few special occasions: the very first character. This doesn't take of after """. so try to use single quote
 #'
 #' @param script character
 #'
 #' @return character
-#' @export
 #'
 #' @examples
 #' capitalize_sentences("how are you? thank you. i am fine. and you?")
+#' @export
+
 capitalize_sentences = function(script){
 
 
@@ -151,10 +155,11 @@ capitalize_sentences = function(script){
 #' @param script character
 #'
 #' @return character
-#' @export
 #'
 #' @examples
 #' capitalize_headings("### introduction")
+#'
+#' @export
 capitalize_headings = function(script){
 
   character_after_pound_position = stringr::str_locate_all(script, "# ")[[1]][, "end"] + 1
@@ -175,14 +180,15 @@ capitalize_headings = function(script){
   return(script)
 }
 
-#' apply functions capitalize_headings() and capitalize_sentences() to an existing rmd
+#' apply functions capitalize_headings(), capitalize_sentences(), replace_based_on_dict() to an existing rmd
 #'
 #' @param filename
 #'
 #' @return
-#' @export
 #'
 #' @importFrom magrittr "%>%"
+#'
+#' @export
 formalize_writing = function(filename, output_filename = filename){
 
 
@@ -190,7 +196,8 @@ formalize_writing = function(filename, output_filename = filename){
   script = readChar(filename, file.info(filename)$size)
   script = script %>%
     capitalize_headings() %>%
-    capitalize_sentences()
+    capitalize_sentences() %>%
+    replace_based_on_dict()
 
   fileConn = file(output_filename)
   writeLines(script, fileConn)

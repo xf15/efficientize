@@ -4,36 +4,21 @@
 # efficientize
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 Efficientize the Life of a Scientist
 
 ## Functions
 
-  - writing help
-      - capitalize the first letter of the first word in each sentence
-      - capitalize the first letter of the first word in rmd headings
-  - todo
-      - maybe replace certain words? already my\_dict.csv in R, nothing
-        in it yet. i need this feature for interface.py list_all, replace(target_file_name, dict_file_name). psychopy_dict.csv, writing_dict.csv
-        
-        
-        under communiation module, there is manuscript, slides, poster
-        
-        formalize writing, by defualt, 2nd arg same as 1st arg 
-
-        how am i handeling caption, somehow after period capitalized (i thought those exempted??), but first character, after fig.cap=", caption="
-
-        
-        infrastructure module 
-        
-        move in bashrc file from temp 
-        
-        copy .Rprofile to all dir containing .Rproject, drafting this in TWOI
-        
-        
-        
+-   writing\_help
+    -   capitalize the first letter of the first word in each sentence
+    -   capitalize the first letter of the first word in rmd headings
+    -   replace shorthands with full spellings
+-   todo
+    -   replace current esl examples with more scientific ones, or not,
+        don’t think i would make this package were i native speaker
+    -   dict\_psyexp.csv is there, not add added to create\_dict.r,
+        data.r, or tested yet
 
 ## Installation
 
@@ -49,36 +34,27 @@ devtools::install_github("xf15/efficientize")
 <https://xf15.github.io/efficientize/index.html> <!-- ## Example -->
 
 <!-- This is a basic example which shows you how to solve a common problem: -->
-
 <!-- ```{r example} -->
-
 <!-- library(efficientize) -->
-
 <!-- ## basic example code -->
-
 <!-- ``` -->
-
 <!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->
-
 <!-- ```{r cars} -->
-
 <!-- summary(cars) -->
-
 <!-- ``` -->
-
 <!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>. -->
-
 <!-- You can also embed plots, for example: -->
-
 <!-- ```{r pressure, echo = FALSE} -->
-
 <!-- plot(pressure) -->
-
 <!-- ``` -->
-
 <!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN. -->
 
 ## development note
+
+consistent function documentation among readme, writing\_help.rmd,
+writing\_help.r
+
+consistent data documentation between data.r and writing\_help.r
 
 str\_locate\_all gives named matrix, find dealt with as matrix searching
 nrow, rest dealt with as vector
