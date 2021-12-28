@@ -21,7 +21,7 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 
 # method
 
-```{r}
+```{r, fig.cap='never mind me.'}
 # i am just a comment. my initial doesn't need to be capitalized. or do i?
 1 + 1
 ```"
@@ -40,7 +40,7 @@ d <- data.frame(x = 1, y = 1:10, fac = fac)
 
 # method
 
-```{r}
+```{r, fig.cap='Never mind me.'}
 # i am just a comment. My initial doesn't need to be capitalized. Or do i?
 1 + 1
 ```"
