@@ -49,7 +49,7 @@ devtools::install_github("xf15/efficientize")
 ## development note
 
 consistent function documentation among readme, writing\_help.rmd,
-writing\_help.r outside and inside function
+writing\_help.r inside and outside function
 
 consistent data documentation between data.r and writing\_help.r
 

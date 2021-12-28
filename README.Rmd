@@ -70,7 +70,7 @@ https://xf15.github.io/efficientize/index.html
 
 ## development note 
 
-consistent function documentation among readme, writing_help.rmd, writing_help.r outside and inside function
+consistent function documentation among readme, writing_help.rmd, writing_help.r inside and outside function
 
 consistent data documentation between data.r and writing_help.r 
 
