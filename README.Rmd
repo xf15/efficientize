@@ -29,8 +29,7 @@ Efficientize the Life of a Scientist
   * capitalize the first letter of the first word in rmd headings
   * replace shorthands with full spellings
 * todo 
-  * replace current esl examples with more scientific ones, or not, don't think i would make this package were i native speaker 
-  * dict_psyexp.csv is there, not add added to create_dict.r, data.r, or tested yet 
+  * dict_psyexp.csv is there, not added to create_dict.r, data.r
  
 ## Installation
 
@@ -71,7 +70,7 @@ https://xf15.github.io/efficientize/index.html
 
 ## development note 
 
-consistent function documentation among readme, writing_help.rmd, writing_help.r 
+consistent function documentation among readme, writing_help.rmd, writing_help.r outside and inside function
 
 consistent data documentation between data.r and writing_help.r 
 
