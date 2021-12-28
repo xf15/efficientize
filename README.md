@@ -4,6 +4,8 @@
 # efficientize
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/xf15/efficientize/workflows/R-CMD-check/badge.svg)](https://github.com/xf15/efficientize/actions)
 <!-- badges: end -->
 
 Efficientize the Life of a Scientist
