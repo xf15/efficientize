@@ -15,9 +15,7 @@ knitr::opts_chunk$set(
 
 # efficientize
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/xf15/efficientize/workflows/R-CMD-check/badge.svg)](https://github.com/xf15/efficientize/actions)
-<!-- badges: end -->
+
 
 Efficientize the Life of a Scientist
 
@@ -29,8 +27,23 @@ Efficientize the Life of a Scientist
   * capitalize the first letter of the first word in each sentence
   * capitalize the first letter of the first word in rmd headings
   * replace shorthands with full spellings
-* todo 
-  * dict_psyexp.csv is there, not added to create_dict.r, data.r
+
+todo dict_psyexp.csv is there, but not added to create_dict.r, data.r
+
+## Templates 
+
+https://bookdown.org/yihui/rmarkdown/template-structure.html
+
+```
+usethis::use_rmarkdown_template(template_name = "default", template_description = "default template")
+usethis::use_rmarkdown_template(template_name = "slides", template_description = "template for slides")
+usethis::use_rmarkdown_template(template_name = "manuscript", template_description = "template for manuscript")
+
+```
+
+todo  manuscript i forgot why used html, so rn pdf
+
+
  
 ## Installation
 

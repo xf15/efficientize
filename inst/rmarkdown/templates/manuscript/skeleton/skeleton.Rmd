@@ -1,0 +1,56 @@
+---
+title: "manuscript"
+output:
+  pdf_document:
+    toc: no
+    latex_engine: xelatex
+    number_sections: true
+bibliography: zotero.bib
+csl: apa-6th-edition.csl  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(dplyr)
+library(ggplot2)
+```
+
+
+```{r, include=FALSE}
+# load results
+
+```
+# Abstract 
+
+# Introduction
+
+# Method 
+
+## Participants
+
+## Materials 
+
+## Procedure 
+
+# Results
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+# Discussion 
+
+# References
+
+<div id="refs"></div>
+
+# Appendix

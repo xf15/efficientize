@@ -1,0 +1,62 @@
+---
+title: "slides"
+author: "Xinzhu Fang"
+date: "2022/01/16 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:   
+    css: [default,talk.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+# bibliography: zotero.bib
+# csl: apa-6th-edition.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+layout: true
+
+<div class="my-header">&emsp;&emsp;Outline</div>
+<br>
+
+---
+
+layout: true
+
+<div class="my-header">&emsp;&emsp;Background</div>
+<br>
+
+---
+
+layout: true
+
+<div class="my-header">&emsp;&emsp;Design</div>
+<br>
+
+---
+
+layout: true
+
+<div class="my-header">&emsp;&emsp;Result</div>
+<br>
+
+---
+
+layout: true
+
+<div class="my-header">&emsp;&emsp;Discussion</div>
+<br>
+
+---
+
+layout: true
+
+.center[
+# questions, criticisms, comments  
+]
+
