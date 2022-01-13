@@ -61,8 +61,6 @@
 <div class="section level1">
 <div class="page-header"><h1 id="efficientize">efficientize<a class="anchor" aria-label="anchor" href="#efficientize"></a>
 </h1></div>
-<!-- badges: start -->
-
 <p>Efficientize the Life of a Scientist</p>
 <div class="section level2">
 <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
@@ -75,18 +73,23 @@
 <li>replace shorthands with full spellings</li>
 </ul>
 </li>
-<li>todo
-<ul>
-<li>dict_psyexp.csv is there, not added to create_dict.r, data.r</li>
 </ul>
-</li>
-</ul>
+<p>todo dict_psyexp.csv is there, but not added to create_dict.r, data.r</p>
+</div>
+<div class="section level2">
+<h2 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
+</h2>
+<p><a href="https://bookdown.org/yihui/rmarkdown/template-structure.html" class="external-link uri">https://bookdown.org/yihui/rmarkdown/template-structure.html</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"default"</span>, <span class="dt">template_description =</span> <span class="st">"default template"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"slides"</span>, <span class="dt">template_description =</span> <span class="st">"template for slides"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"manuscript"</span>, <span class="dt">template_description =</span> <span class="st">"template for manuscript"</span>)</span></code></pre></div>
+<p>todo manuscript i forgot why used html, so rn pdf</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>I don’t expect this to ever be on CRAN</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"xf15/efficientize"</span><span class="op">)</span></code></pre></div>
 </div>
@@ -146,12 +149,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/xf15/efficientize/actions" class="external-link"><img src="https://github.com/xf15/efficientize/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-</ul>
-</div>
+
 
   </div>
 </div>
