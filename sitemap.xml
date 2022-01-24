@@ -19,9 +19,6 @@
     <loc>/articles/informal_paper.html</loc>
   </url>
   <url>
-    <loc>/articles/writing_help.html</loc>
-  </url>
-  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -34,9 +31,18 @@
     <loc>/reference/capitalize_sentences.html</loc>
   </url>
   <url>
+    <loc>/reference/dict_writing.html</loc>
+  </url>
+  <url>
     <loc>/reference/formalize_writing.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/replace_based_on_dict.html</loc>
+  </url>
+  <url>
+    <loc>/reference/update_psychopy_script_for_multiple_lists.html</loc>
   </url>
 </urlset>
