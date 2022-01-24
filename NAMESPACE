@@ -3,4 +3,6 @@
 export(capitalize_headings)
 export(capitalize_sentences)
 export(formalize_writing)
+export(replace_based_on_dict)
+export(update_psychopy_script_for_multiple_lists)
 importFrom(magrittr,"%>%")

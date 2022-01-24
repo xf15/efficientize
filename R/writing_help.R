@@ -1,8 +1,16 @@
-#' replace strings referring to "dictionary" in csv resides in /data. i use it in two scenarios, for writing
-#' replace shorthands with full spellings
-#' , for code, e.g.,
-#' modify psychopy script used for a single list to be used as script for task combining all lists
-#' . unless specified which csv dict to use, go through all of them -- easiest to code and no harm. if you want to use this feature, you should fork my repo, replace my csv with your own, and install your repo
+#' replace strings referring to "dictionaries"
+#'
+#' duh
+#'
+#' i use it in two scenarios. for writing
+#' ,
+#' replace shorthands with full spellings see https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv
+#' .
+#' for code
+#' ,
+#' modify psyexp script used for a single list to be used as script for task combining all lists see https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv
+#' .
+#' if you want to use this feature, you should fork my repo, replace my csv with your own, and install your repo, don't send me pull request on this
 #'
 #'
 #'
@@ -11,7 +19,7 @@
 #' @return character
 #'
 #' @examples
-#' replace_based_on_dict("/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2.py", 'dict_psyexp.csv')
+#' replace_based_on_dict("in exp1", 'dict_writing.rda')
 #'
 #' @export
 replace_based_on_dict = function(script, dict_filenames = c('dict_writing.rda')){
@@ -24,7 +32,6 @@ replace_based_on_dict = function(script, dict_filenames = c('dict_writing.rda'))
   # https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/
   data(list = c(df_dict_names)) # The ability to specify a dataset by name (without quotes) is NOT a convenience. if i do data(dict_filename) i get warning message In data(dict_filename) : data set ‘dict_filename’ not found
 
-  # also cannot simply place csv in data and just do dict_filenames = list.files(file.path(find.package("efficientize"),'data'), pattern="*csv" and then later read.csv(file.path(find.package("efficientize"),'data', dict_filenames[iDict])) because check() returns cannot open file '/private/var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T/Rtmpp7sS7M/efficientize.Rcheck/efficientize/data/NA': No such file or directory
 
   for(iDict in c(1: num_dict)){
     eval(parse(text = paste0(c("df_dict =", df_dict_names[iDict]))))
@@ -77,12 +84,23 @@ exempt_yaml_header = function(script){
 
   }
 }
-#' capitalize the first letter of the first word in each sentence, specifically
+
+
+
+#' capitalize the first letter of the first word in each sentence
+#'
+#' duh
+#'
+#' specifically
 #' capitalize the very first character of entire doc (innocuous to rmd yaml header)
+#' ,
 #' find ". ", "! ", "' ", "'" in text and capitalize the first character following them
+#' ,
 #' find "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them
+#' ,
 #' find " '", "='", capitalize the first character following them, second case is for fig.cap in r chunk header
-#' This doesn't take of after """. so try to use single quote
+#' .
+#' This doesn't take of after """. so try to use single quote instead
 #'
 #' @param script character
 #'
@@ -90,15 +108,15 @@ exempt_yaml_header = function(script){
 #'
 #' @examples
 #' capitalize_sentences("how are you? thank you. i am fine. and you?")
+#'
 #' @export
-
 capitalize_sentences = function(script){
 
 
-  #' capitalize the very first character of entire doc (innocuous to rmd yaml header)
+  # capitalize the very first character of entire doc (innocuous to rmd yaml header)
   stringr::str_sub(script, 1, 1) = toupper(stringr::str_sub(script, 1, 1))
 
-  #' find ". ", "! ", "' ", "'" in text and capitalize the first character following them
+  # find ". ", "! ", "' ", "'" in text and capitalize the first character following them
 
   period_position = rbind(stringr::str_locate_all(script, "\\. ")[[1]], stringr::str_locate_all(script, "\\? ")[[1]], stringr::str_locate_all(script, "\\' ")[[1]])
 
@@ -112,7 +130,7 @@ capitalize_sentences = function(script){
     }
   }
 
-  #' find " '", "='", capitalize the first character following them, second case is for fig.cap in r chunk header
+  # find " '", "='", capitalize the first character following them, second case is for fig.cap in r chunk header
   quote_position = rbind(stringr::str_locate_all(script, " \\'")[[1]], stringr::str_locate_all(script, "=\\'")[[1]])
 
   num_quote = nrow(quote_position)
@@ -126,7 +144,7 @@ capitalize_sentences = function(script){
   }
 
 
-  #' find "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them
+  # find "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them
 
 
 
@@ -209,8 +227,6 @@ capitalize_headings = function(script){
 #' @export
 formalize_writing = function(filename, output_filename = filename){
 
-
-
   script = readChar(filename, file.info(filename)$size)
   script = script %>%
     capitalize_headings() %>%
@@ -222,4 +238,25 @@ formalize_writing = function(filename, output_filename = filename){
   close(fileConn)
 }
 
+#' apply functions capitalize_headings(), capitalize_sentences(), replace_based_on_dict() to an existing rmd
+#'
+#' @param filename
+#'
+#' @return
+#'
+#' @importFrom magrittr "%>%"
+#'
+#' @examples
+#' update_psychopy_script_for_multiple_lists("/Users/xzfang/Github/ideal_adapter/interface_exp2.psyexp", "/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2_list_all.psyexp")
+#'
+#' @export
+update_psychopy_script_for_multiple_lists = function(filename, output_filename = filename){
 
+  script = readChar(filename, file.info(filename)$size)
+  script = script %>%
+    replace_based_on_dict('dict_psyexp.rda')
+
+  fileConn = file(output_filename)
+  writeLines(script, fileConn)
+  close(fileConn)
+}

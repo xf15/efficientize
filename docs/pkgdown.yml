@@ -1,9 +1,8 @@
-pandoc: 2.7.3
-pkgdown: 1.6.1
+pandoc: 2.11.4
+pkgdown: 2.0.1
 pkgdown_sha: ~
 articles:
   formal_paper: formal_paper.html
   informal_paper: informal_paper.html
-  writing_help: writing_help.html
-last_built: 2021-08-12T21:53Z
+last_built: 2022-01-24T08:05Z
 

@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Efficientize the Life of a Scientist • efficientize</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<title>Efficientize writing and programming • efficientize</title>
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Efficientize the Life of a Scientist">
+<script src="pkgdown.js"></script><meta property="og:title" content="Efficientize writing and programming">
 <meta property="og:description" content="What the package does (one paragraph).">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,17 +33,29 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">efficientize</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="articles/writing_help.html">writing help</a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/formal_paper.html"></a>
+    </li>
+    <li>
+      <a href="articles/informal_paper.html"></a>
+    </li>
+  </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
@@ -56,92 +70,132 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="efficientize" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#efficientize" class="anchor"></a>efficientize</h1></div>
-<!-- badges: start -->
-<!-- badges: end -->
-<p>Efficientize the Life of a Scientist</p>
-<div id="functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#functions" class="anchor"></a>Functions</h2>
+<div class="section level1">
+<div class="page-header"><h1 id="efficientize">efficientize<a class="anchor" aria-label="anchor" href="#efficientize"></a>
+</h1></div>
+<p>Efficientize writing and programming</p>
+<div class="section level2">
+<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
 <ul>
-<li>writing help
+<li>
+<code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies
+<ul>
+<li>
+<code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to
 <ul>
 <li>capitalize the first letter of the first word in each sentence</li>
+</ul>
+</li>
+<li>
+<code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to
+<ul>
 <li>capitalize the first letter of the first word in rmd headings</li>
 </ul>
 </li>
-<li>todo
+<li>
+<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to
 <ul>
-<li>maybe replace certain words? already my_dict.csv in R, nothing in it yet.</li>
+<li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can supply the source file name only to change the source file directly, e.g., <code>formalize_writing("informal_paper.Rmd")</code> or in addition supply a destination file name to create a new file, e.g.,</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">formalize_writing</span>(<span class="st">"informal_paper.Rmd"</span>, <span class="st">"formal_paper.Rmd"</span>)</span></code></pre></div>
+<p>see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/informal_paper.Rmd" class="external-link">informal_paper.Rmd</a> see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd" class="external-link">formal_paper.Rmd</a></p>
+<ul>
+<li>
+<code><a href="reference/update_psychopy_script_for_multiple_lists.html">update_psychopy_script_for_multiple_lists()</a></code> applies
+<ul>
+<li>
+<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to
+<ul>
+<li>modify psyexp script used for a single list to be used as script for task combining all lists see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"default"</span>, <span class="at">template_description =</span> <span class="st">"default template"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"slides"</span>, <span class="at">template_description =</span> <span class="st">"template for slides"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"manuscript"</span>, <span class="at">template_description =</span> <span class="st">"template for manuscript"</span>)</span></code></pre></div>
+<p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/default/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/default/skeleton/skeleton.Rmd</a></p>
+<p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/slides/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/slides/skeleton/skeleton.Rmd</a></p>
+<p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/manuscript/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/manuscript/skeleton/skeleton.Rmd</a></p>
+<p><a href="https://bookdown.org/yihui/rmarkdown/template-structure.html" class="external-link uri">https://bookdown.org/yihui/rmarkdown/template-structure.html</a></p>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>I don’t expect this to ever be on CRAN</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"xf15/efficientize"</span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"xf15/efficientize"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="documentation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h2>
-<p><a href="https://xf15.github.io/efficientize/index.html" class="uri">https://xf15.github.io/efficientize/index.html</a> <!-- ## Example --></p>
-<!-- This is a basic example which shows you how to solve a common problem: -->
-<!-- ```{r example} -->
-<!-- library(efficientize) -->
-<!-- ## basic example code -->
-<!-- ``` -->
-<!-- What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so: -->
-<!-- ```{r cars} -->
-<!-- summary(cars) -->
-<!-- ``` -->
-<!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>. -->
-<!-- You can also embed plots, for example: -->
-<!-- ```{r pressure, echo = FALSE} -->
-<!-- plot(pressure) -->
-<!-- ``` -->
-<!-- In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN. -->
+<div class="section level2">
+<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
+</h2>
+<p><a href="https://xf15.github.io/efficientize/index.html" class="external-link uri">https://xf15.github.io/efficientize/index.html</a></p>
 </div>
-<div id="development-note" class="section level2">
-<h2 class="hasAnchor">
-<a href="#development-note" class="anchor"></a>development note</h2>
+<div class="section level2">
+<h2 id="development-note">development note<a class="anchor" aria-label="anchor" href="#development-note"></a>
+</h2>
+<p>copy first line of roxygen function comment for function here</p>
+<p>the rest lines of roxygen comment should be copied from inline comments, replacing #’ with # otherwise get all code recognized as roxygen get @export may only span a single line, supposed to be already fixed though <a href="https://github.com/r-lib/roxygen2/issues/737" class="external-link uri">https://github.com/r-lib/roxygen2/issues/737</a></p>
+<p>consistent function documentation among readme, writing_help.rmd, writing_help.r inside and outside function</p>
 <p>str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector</p>
 <p>substr</p>
-<p><a href="https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf" class="uri">https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf</a></p>
+<p><a href="https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf" class="external-link uri">https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf</a></p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing efficientize</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Xinzhu Fang <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Xinzhu Fang.</p>
+  <p></p>
+<p>Developed by Xinzhu Fang.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -149,6 +203,8 @@
 
   
 
+
+  
 
   </body>
 </html>
