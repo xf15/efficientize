@@ -43,7 +43,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -77,49 +77,29 @@
 <div class="section level2">
 <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
 </h2>
-<ul>
+<ul><li>
+<code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies<ul>
 <li>
-<code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies
-<ul>
-<li>
-<code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to
-<ul>
-<li>capitalize the first letter of the first word in each sentence</li>
-</ul>
+<code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to<ul><li>capitalize the first letter of the first word in each sentence</li></ul>
 </li>
 <li>
-<code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to
-<ul>
-<li>capitalize the first letter of the first word in rmd headings</li>
-</ul>
+<code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to<ul><li>capitalize the first letter of the first word in rmd headings</li></ul>
 </li>
 <li>
-<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to
-<ul>
-<li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
+<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to<ul><li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
+</li></ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+</li></ul>
 <p>You can supply the source file name only to change the source file directly, e.g., <code>formalize_writing("informal_paper.Rmd")</code> or in addition supply a destination file name to create a new file, e.g.,</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">formalize_writing</span>(<span class="st">"informal_paper.Rmd"</span>, <span class="st">"formal_paper.Rmd"</span>)</span></code></pre></div>
 <p>see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/informal_paper.Rmd" class="external-link">informal_paper.Rmd</a> see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd" class="external-link">formal_paper.Rmd</a></p>
-<ul>
-<li>
-<code><a href="reference/update_psychopy_script_for_multiple_lists.html">update_psychopy_script_for_multiple_lists()</a></code> applies
-<ul>
-<li>
-<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to
-<ul>
-<li>modify psyexp script used for a single list to be used as script for task combining all lists see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<ul><li>
+<code><a href="reference/update_psychopy_script_for_multiple_lists.html">update_psychopy_script_for_multiple_lists()</a></code> applies<ul><li>
+<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to<ul><li>modify psyexp script used for a single list to be used as script for task combining all lists see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv</a>
+</li></ul>
+</li></ul>
+</li></ul>
 </div>
 <div class="section level2">
 <h2 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
@@ -195,7 +175,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>
