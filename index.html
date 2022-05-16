@@ -104,7 +104,7 @@
 <div class="section level2">
 <h2 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"default"</span>, <span class="dt">template_description =</span> <span class="st">"default template"</span>)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"scratch"</span>, <span class="dt">template_description =</span> <span class="st">"for exploration"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"slides"</span>, <span class="dt">template_description =</span> <span class="st">"template for slides"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3"></a>usethis<span class="op">::</span><span class="kw">use_rmarkdown_template</span>(<span class="dt">template_name =</span> <span class="st">"manuscript"</span>, <span class="dt">template_description =</span> <span class="st">"template for manuscript"</span>)</span></code></pre></div>
 <p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/default/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/default/skeleton/skeleton.Rmd</a></p>
@@ -126,11 +126,18 @@
 <p><a href="https://xf15.github.io/efficientize/index.html" class="external-link uri">https://xf15.github.io/efficientize/index.html</a></p>
 </div>
 <div class="section level2">
-<h2 id="development-note">development note<a class="anchor" aria-label="anchor" href="#development-note"></a>
+<h2 id="todo">todo<a class="anchor" aria-label="anchor" href="#todo"></a>
+</h2>
+<p>efficientize::update_psychopy_script_for_multiple_lists(“/Users/xzfang/Github/ideal_adapter/interface_exp2.psyexp”, “/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2_list_all.psyexp”)</p>
+<p>only work when in project environment</p>
+<p>go through all check warnings and note, rmd papers should be in inst/doc</p>
+<p>why no <a href="https://github.com/xf15/efficientize/blob/main/R/data.R" class="external-link uri">https://github.com/xf15/efficientize/blob/main/R/data.R</a> for psyexp</p>
+</div>
+<div class="section level2">
+<h2 id="note">note<a class="anchor" aria-label="anchor" href="#note"></a>
 </h2>
 <p>copy first line of roxygen function comment for function here</p>
 <p>the rest lines of roxygen comment should be copied from inline comments, replacing #’ with # otherwise get all code recognized as roxygen get @export may only span a single line, supposed to be already fixed though <a href="https://github.com/r-lib/roxygen2/issues/737" class="external-link uri">https://github.com/r-lib/roxygen2/issues/737</a></p>
-<p>consistent function documentation among readme, writing_help.rmd, writing_help.r inside and outside function</p>
 <p>str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector</p>
 <p>substr</p>
 <p><a href="https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf" class="external-link uri">https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf</a></p>
