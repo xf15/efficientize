@@ -4,20 +4,48 @@ author: "Xinzhu Fang"
 date: "2022/01/16 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:   
-    css: [default,talk.css]
+    css: [default,/Users/xzfang/Github/efficientize/files_for_efficientize_exp_repo_template/cindy_slides.css]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9'
-# bibliography: zotero.bib
-# csl: apa-6th-edition.csl
 ---
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+
+library(dplyr)
 library(ggplot2)
+library(kableExtra)
+
+theme_slides = function(){
+  theme_gray(base_size = 14) %+replace%
+    theme(
+      # shared between slides and manuscript
+      plot.title = element_text(size = rel(1)),
+      axis.title = element_text(size = rel(1)),
+      legend.title = element_text(size = rel(1)),
+      legend.text = element_text(size = rel(1)),
+      strip.text = element_text(size = rel(1)),
+      strip.text.x = element_text(margin=margin(3, 0, 5, 0)),
+      axis.text = element_text(size = rel(0.9)),
+      legend.position = "bottom",
+      strip.text.y = element_text(angle = 0, margin = margin(0, 2, 0, 2))
+
+      # slides specific
+      axis.title.y=element_text(angle=0, vjust = 0.5)
+
+    )
+}
+
+theme_set(theme_slides())
+
 ```
 layout: true
 
@@ -33,6 +61,8 @@ layout: true
 
 ---
 
+---
+
 layout: true
 
 <div class="my-header">&emsp;&emsp;Design</div>
@@ -40,6 +70,7 @@ layout: true
 
 ---
 
+---
 layout: true
 
 <div class="my-header">&emsp;&emsp;Result</div>
@@ -47,6 +78,7 @@ layout: true
 
 ---
 
+---
 layout: true
 
 <div class="my-header">&emsp;&emsp;Discussion</div>
@@ -54,9 +86,21 @@ layout: true
 
 ---
 
-layout: true
+---
+layout: false
 
 .center[
 # questions, criticisms, comments  
 ]
 
+
+---
+
+layout: true
+
+<div class="my-header">&emsp;&emsp;Appendices</div>
+<br>
+
+---
+
+---

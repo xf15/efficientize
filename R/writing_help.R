@@ -238,7 +238,7 @@ formalize_writing = function(filename, output_filename = filename){
   close(fileConn)
 }
 
-#' apply functions capitalize_headings(), capitalize_sentences(), replace_based_on_dict() to an existing rmd
+#' apply function replace_based_on_dict() to an existing rmd
 #'
 #' @param filename
 #'

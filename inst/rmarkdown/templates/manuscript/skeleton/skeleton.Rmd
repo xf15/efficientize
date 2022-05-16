@@ -5,14 +5,36 @@ output:
     toc: no
     latex_engine: xelatex
     number_sections: true
-bibliography: zotero.bib
-csl: apa-6th-edition.csl  
+bibliography: /Users/xzfang/Github/efficientize/files_for_efficientize_exp_repo_template/cindy_zotero.bib
+csl: /Users/xzfang/Github/efficientize/files_for_efficientize_exp_repo_template/apa-7th-edition.csl
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+
 library(dplyr)
 library(ggplot2)
+
+theme_manuscript = function(){
+  theme_gray(base_size = 10) %+replace%
+    theme(
+      # shared between slides and manuscript
+      plot.title = element_text(size = rel(1)),
+      axis.title = element_text(size = rel(1)),
+      legend.title = element_text(size = rel(1)),
+      legend.text = element_text(size = rel(1)),
+      strip.text = element_text(size = rel(1)),
+      strip.text.x = element_text(margin=margin(3, 0, 5, 0)),
+      axis.text = element_text(size = rel(0.9)),
+      legend.position = "bottom",
+      strip.text.y = element_text(angle = 0, margin = margin(0, 2, 0, 2))
+
+      # manuscript specific
+
+    )
+}
+
+theme_set(theme_manuscript())
 ```
 
 
@@ -20,17 +42,17 @@ library(ggplot2)
 # load results
 
 ```
-# Abstract 
+# Abstract
 
 # Introduction
 
-# Method 
+# Method
 
 ## Participants
 
-## Materials 
+## Materials
 
-## Procedure 
+## Procedure
 
 # Results
 ```{r}
@@ -47,7 +69,7 @@ library(ggplot2)
 
 ```
 
-# Discussion 
+# Discussion
 
 # References
 

@@ -37,7 +37,7 @@ see
 
 ## Templates
 
-    usethis::use_rmarkdown_template(template_name = "default", template_description = "default template")
+    usethis::use_rmarkdown_template(template_name = "scratch", template_description = "for exploration")
     usethis::use_rmarkdown_template(template_name = "slides", template_description = "template for slides")
     usethis::use_rmarkdown_template(template_name = "manuscript", template_description = "template for manuscript")
 
@@ -62,7 +62,19 @@ devtools::install_github("xf15/efficientize")
 
 <https://xf15.github.io/efficientize/index.html>
 
-## development note
+## todo
+
+efficientize::update\_psychopy\_script\_for\_multiple\_lists(“/Users/xzfang/Github/ideal\_adapter/interface\_exp2.psyexp”,
+“/Users/xzfang/Github/ideal\_adapter/ideal\_adapter\_exp2\_List\_All/interface\_exp2\_list\_all.psyexp”)
+
+only work when in project environment
+
+go through all check warnings and note, rmd papers should be in inst/doc
+
+why no <https://github.com/xf15/efficientize/blob/main/R/data.R> for
+psyexp
+
+## note
 
 copy first line of roxygen function comment for function here
 
@@ -70,9 +82,6 @@ the rest lines of roxygen comment should be copied from inline comments,
 replacing \#’ with \# otherwise get all code recognized as roxygen get
 @export may only span a single line, supposed to be already fixed though
 <https://github.com/r-lib/roxygen2/issues/737>
-
-consistent function documentation among readme, writing\_help.rmd,
-writing\_help.r inside and outside function
 
 str\_locate\_all gives named matrix, find dealt with as matrix searching
 nrow, rest dealt with as vector
