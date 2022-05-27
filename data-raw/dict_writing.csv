@@ -2,5 +2,7 @@ old,new
 exp1,Experiment 1
 exp2,Experiment 2
 exp3,Experiment 3
-subjects,participants
-appendix,Appendix 
+subjects, participants
+diff_accent,the different accent condition
+same_accent,the same accent condition
+same_person,the same person condition
