@@ -35,8 +35,9 @@ replace_based_on_dict = function(script, dict_filenames = c('dict_writing.rda'))
 
   for(iDict in c(1: num_dict)){
     eval(parse(text = paste0(c("df_dict =", df_dict_names[iDict]))))
-    for(iRow in 1:nrow(df_dict)){
-      script = stringr::str_replace_all(script, df_dict[iRow,"old"], df_dict[iRow, "new"])
+    for(iRow in 1:nrow(df_dict)){ # add those space and quote to exclude code which should be surrounded by underscore, quote on at least one end
+      script = stringr::str_replace_all(script, paste0(' ', df_dict[iRow,"old"]), paste0(' ',  df_dict[iRow, "new"]))
+      script = stringr::str_replace_all(script, paste0(df_dict[iRow,"old"], ' '), paste0( df_dict[iRow, "new"], ' '))
     }
   }
 
@@ -91,16 +92,12 @@ exempt_yaml_header = function(script){
 #'
 #' duh
 #'
-#' specifically
-#' capitalize the very first character of entire doc (innocuous to rmd yaml header)
-#' ,
-#' find ". ", "! ", "' ", "'" in text and capitalize the first character following them
-#' ,
-#' find "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them
-#' ,
-#' find " '", "='", capitalize the first character following them, second case is for fig.cap in r chunk header
-#' .
-#' This doesn't take of after """. so try to use single quote instead
+#' first
+#' find position of rchunk and yaml heeader. they will be exempted
+#' then
+#' find ". ", "! "in text and capitalize the first character following them
+#' and
+#' find "\n" in text and capitalize the first character following them
 #'
 #' @param script character
 #'
@@ -112,48 +109,12 @@ exempt_yaml_header = function(script){
 #' @export
 capitalize_sentences = function(script){
 
+  #' find position of rchunk and yaml heeader. they will be exempted
 
-  # capitalize the very first character of entire doc (innocuous to rmd yaml header)
-  stringr::str_sub(script, 1, 1) = toupper(stringr::str_sub(script, 1, 1))
-
-  # find ". ", "! ", "' ", "'" in text and capitalize the first character following them
-
-  period_position = rbind(stringr::str_locate_all(script, "\\. ")[[1]], stringr::str_locate_all(script, "\\? ")[[1]], stringr::str_locate_all(script, "\\' ")[[1]])
-
-  num_sent = nrow(period_position)
-
-
-  if(num_sent != 0){
-
-    for(iSent in 1: num_sent){
-      stringr::str_sub(script, period_position[iSent, "start"]+2, period_position[iSent, "end"]+1) = toupper(stringr::str_sub(script, period_position[iSent, "start"]+2, period_position[iSent, "end"]+1))
-    }
-  }
-
-  # find " '", "='", capitalize the first character following them, second case is for fig.cap in r chunk header
-  quote_position = rbind(stringr::str_locate_all(script, " \\'")[[1]], stringr::str_locate_all(script, "=\\'")[[1]])
-
-  num_quote = nrow(quote_position)
-
-
-  if(num_quote != 0){
-
-    for(iSent in 1: num_quote){
-      stringr::str_sub(script, quote_position[iSent, "start"]+2, quote_position[iSent, "end"]+1) = toupper(stringr::str_sub(script, quote_position[iSent, "start"]+2, quote_position[iSent, "end"]+1))
-    }
-  }
-
-
-  # find "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them
-
-
-
-  character_after_new_line_position = stringr::str_locate_all(script, "\n")[[1]][, "start"] + 1 #\n count as one character
   exempt_position = c(exempt_rchunk(script), exempt_yaml_header(script))
 
 
-
-  # those in latex expression
+  # exempt those in latex expression
   if(stringr::str_detect(script, "\\$\\$")){
     latex_position = stringr::str_locate_all(script, "\\$\\$")[[1]]
     num_marks = nrow(latex_position)
@@ -170,6 +131,39 @@ capitalize_sentences = function(script){
       }
     }
   }
+
+
+
+  # find ". ", "! "in text and capitalize the first character following them
+
+  period_position = c(stringr::str_locate_all(script, "\\. ")[[1]][, "end"] + 1, stringr::str_locate_all(script, "\\? ")[[1]][, "end"] + 1, stringr::str_locate_all(script, "\\' ")[[1]][, "end"] + 1)
+
+
+
+  period_position = period_position[!(period_position %in% exempt_position)]
+
+
+
+
+  num_sent = length(period_position)
+
+
+  if(num_sent != 0){
+
+    for(iSent in 1: num_sent){
+      stringr::str_sub(script, period_position [iSent], period_position [iSent]) = toupper(stringr::str_sub(script, period_position [iSent], period_position [iSent]))
+    }
+  }
+
+
+
+
+  # find "\n" in text and capitalize the first character following them
+
+
+
+  character_after_new_line_position = stringr::str_locate_all(script, "\n")[[1]][, "end"] + 1 #\n count as one character
+
 
   character_after_new_line_position = character_after_new_line_position[!(character_after_new_line_position %in% exempt_position)]
 
