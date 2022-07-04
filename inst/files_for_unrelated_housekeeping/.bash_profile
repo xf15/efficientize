@@ -14,13 +14,23 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Cindy there is no line break in text
-# this file is linked to the .bash_profile in my mac home dir
-cd Github
-# conda activate py27
 
-# to run a script called test.m, then do matlab -batch "test"
-alias matlab="/Applications/MATLAB_R2020b.app/bin/matlab -nojvm -nodesktop"
+# because 
+# When invoking a login shell bash will looks for its config files in this order:
+
+# [0] ~/.bash_profile
+# [1] ~/.bash_login
+# [2] ~/.profile
+# for ubuntu 
+
+if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+fi
+
+if [ -f "$HOME/.profile" ]; then
+    . "$HOME/.profile"
+fi
+
 
 function push(){
 git pull 
@@ -124,4 +134,8 @@ function monthly(){
 clean
 backup_zotero
 }
-#c
+
+cd Github
+
+# to run a script called test.m, then do matlab -batch "test"
+alias matlab="/Applications/MATLAB_R2020b.app/bin/matlab -nojvm -nodesktop"
