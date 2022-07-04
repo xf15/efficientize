@@ -10,12 +10,13 @@ Description: What the package does (one paragraph).
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Imports: 
     dplyr,
     magrittr,
     rmarkdown,
-    stringr
+    stringr,
+    bib2df
 Suggests: 
     rmarkdown,
     knitr,

@@ -35,6 +35,17 @@ see
             script for task combining all lists see
             <https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv>
 
+### dicts are updated when README.md is updated
+
+``` r
+source('data-raw/create_dict.R')
+#> ✔ Setting active project to '/Users/xzfang/Github/efficientize'
+#> ✔ Saving 'dict_writing' to 'data/dict_writing.rda'
+#> • Document your data (see 'https://r-pkgs.org/data.html')
+#> ✔ Saving 'dict_psyexp' to 'data/dict_psyexp.rda'
+#> • Document your data (see 'https://r-pkgs.org/data.html')
+```
+
 ## Templates
 
     usethis::use_rmarkdown_template(template_name = "scratch", template_description = "for exploration")
@@ -51,16 +62,21 @@ see
 
 ## Installation
 
-I don’t expect this to ever be on CRAN
+files in `/inst` with prefix my\_ need to be synced to your own files
 
-``` r
-# install.packages("devtools")
-devtools::install_github("xf15/efficientize")
-```
+so fork, clone
+
+throughout this project, replace
+
+    /Users/xzfang/Github/efficientize/
+
+with your repo path
+
+    devtools::install()
 
 ## Documentation
 
-<https://xf15.github.io/efficientize/index.html>
+<https://xf15.github.io/efficientize/>
 
 ## todo
 

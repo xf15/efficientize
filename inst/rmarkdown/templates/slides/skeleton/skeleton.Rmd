@@ -4,7 +4,7 @@ author: "Xinzhu Fang"
 date: "2022/01/16 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:   
-    css: [default, cindy_slides.css]
+    css: [default, my_slides.css]
     lib_dir: libs
     nature:
       highlightStyle: github

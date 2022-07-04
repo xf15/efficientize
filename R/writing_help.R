@@ -26,20 +26,41 @@ replace_based_on_dict = function(script, dict_filenames = c('dict_writing.rda'))
   df_dict_names = stringr::str_sub(dict_filenames, 1, -5)
   num_dict = length(dict_filenames)
 
+
   # end up not using
   # https://rdrr.io/r/utils/data.html
-  # because the parameters it passes to read.table doesn't include quote="\"" to exempt single quote, cannot handle single quote in my code csv. others annoying things are it uses ; not , as sep; it convert string to factors
+  # because the parameters it passes to read.table doesn't include quote="\"" to exempt single quote, cannot handle single quote in my code csv. others annoying things are it uses ; not , as sep. it convert string to factors
   # https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/
   data(list = c(df_dict_names)) # The ability to specify a dataset by name (without quotes) is NOT a convenience. if i do data(dict_filename) i get warning message In data(dict_filename) : data set ‘dict_filename’ not found
 
+  # use exempt_rchunk to find all text sections, loop through all text sections to str_replace_all
+  if(stringr::str_detect(script, "```")){
+    rchunk_start_position = stringr::str_locate_all(script, "```\\{")[[1]][, "start"]
+    # subtract second set from first set
+    rchunk_end_position =  setdiff(stringr::str_locate_all(script, "```")[[1]][, "start"], rchunk_start_position)
 
-  for(iDict in c(1: num_dict)){
-    eval(parse(text = paste0(c("df_dict =", df_dict_names[iDict]))))
-    for(iRow in 1:nrow(df_dict)){ # add those space and quote to exclude code which should be surrounded by underscore, quote on at least one end
-      script = stringr::str_replace_all(script, paste0(' ', df_dict[iRow,"old"]), paste0(' ',  df_dict[iRow, "new"]))
-      script = stringr::str_replace_all(script, paste0(df_dict[iRow,"old"], ' '), paste0( df_dict[iRow, "new"], ' '))
+    if(length(rchunk_start_position) != length(rchunk_end_position)){
+      stop("you got ``` in your comments, remove those, search for # ``` may help")
+    }
+
+
+    text_section_start_position = c(1, rchunk_end_position)
+    text_section_end_position = c(rchunk_start_position, nchar(script))
+    num_text_section = length(text_section_start_position)
+    for (iSect in c(1:num_text_section)){
+      cur_start = text_section_start_position[iSect]
+      cur_end = text_section_end_position[iSect]
+      for(iDict in c(1: num_dict)){
+        eval(parse(text = paste0(c("df_dict =", df_dict_names[iDict]))))
+        for(iRow in 1:nrow(df_dict)){ # to make sure to replace words only not some part of words, all replaced string should follow or is followed by a space
+          stringr::str_sub(script, cur_start, cur_end) = stringr::str_replace_all(stringr::str_sub(script, cur_start, cur_end), paste0(' ', df_dict[iRow,"old"]), paste0(' ',  df_dict[iRow, "new"]))
+          stringr::str_sub(script, cur_start, cur_end) = stringr::str_replace_all(stringr::str_sub(script, cur_start, cur_end), paste0(df_dict[iRow,"old"], ' '), paste0( df_dict[iRow, "new"], ' '))
+        }
+      }
+
     }
   }
+
 
   return(script)
 }
@@ -58,16 +79,13 @@ exempt_rchunk = function(script){
       stop("you got ``` in your comments, remove those, search for # ``` may help")
     }
 
-    # if more than one chunk, will get In addition: Warning message:
-    # In if (!is.na(rchunk_start_position)) { :
-    # the condition has length > 1 and only the first element will be used
-    if(sum(!is.na(rchunk_start_position))>0){
-      exempt_position = c()
-      num_rchunk = length(rchunk_start_position)
-      for(iR in 1:num_rchunk){
-        exempt_position = c(exempt_position, rchunk_start_position[iR]:rchunk_end_position[iR])
-      }
+
+    exempt_position = c()
+    num_rchunk = length(rchunk_start_position)
+    for(iR in 1:num_rchunk){
+      exempt_position = c(exempt_position, rchunk_start_position[iR]:rchunk_end_position[iR])
     }
+
     # print(character_after_new_line_position)
 
   }
@@ -90,15 +108,6 @@ exempt_yaml_header = function(script){
 
 #' capitalize the first letter of the first word in each sentence
 #'
-#' duh
-#'
-#' first
-#' find position of rchunk and yaml heeader. they will be exempted
-#' then
-#' find ". ", "! "in text and capitalize the first character following them
-#' and
-#' find "\n" in text and capitalize the first character following them
-#'
 #' @param script character
 #'
 #' @return character
@@ -109,7 +118,11 @@ exempt_yaml_header = function(script){
 #' @export
 capitalize_sentences = function(script){
 
-  #' find position of rchunk and yaml heeader. they will be exempted
+
+  # capitalize the very first character of entire doc (innocuous to rmd yaml header)
+  stringr::str_sub(script, 1, 1) = toupper(stringr::str_sub(script, 1, 1))
+
+  # find position of rchunk and yaml heeader. they will be exempted
 
   exempt_position = c(exempt_rchunk(script), exempt_yaml_header(script))
 
@@ -139,8 +152,8 @@ capitalize_sentences = function(script){
   period_position = c(stringr::str_locate_all(script, "\\. ")[[1]][, "end"] + 1, stringr::str_locate_all(script, "\\? ")[[1]][, "end"] + 1, stringr::str_locate_all(script, "\\' ")[[1]][, "end"] + 1)
 
 
-
-  period_position = period_position[!(period_position %in% exempt_position)]
+  # it's ok, see the space i included behind ? and .
+  # period_position = period_position[!(period_position %in% exempt_position)]
 
 
 
@@ -214,7 +227,6 @@ capitalize_headings = function(script){
 #'
 #' @param filename
 #'
-#' @return
 #'
 #' @importFrom magrittr "%>%"
 #'
@@ -232,25 +244,4 @@ formalize_writing = function(filename, output_filename = filename){
   close(fileConn)
 }
 
-#' apply function replace_based_on_dict() to an existing rmd
-#'
-#' @param filename
-#'
-#' @return
-#'
-#' @importFrom magrittr "%>%"
-#'
-#' @examples
-#' update_psychopy_script_for_multiple_lists("/Users/xzfang/Github/ideal_adapter/interface_exp2.psyexp", "/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2_list_all.psyexp")
-#'
-#' @export
-update_psychopy_script_for_multiple_lists = function(filename, output_filename = filename){
 
-  script = readChar(filename, file.info(filename)$size)
-  script = script %>%
-    replace_based_on_dict('dict_psyexp.rda')
-
-  fileConn = file(output_filename)
-  writeLines(script, fileConn)
-  close(fileConn)
-}

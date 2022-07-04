@@ -9,9 +9,6 @@ formalize_writing(filename, output_filename = filename)
 \arguments{
 \item{filename}{}
 }
-\value{
-
-}
 \description{
 apply functions capitalize_headings(), capitalize_sentences(), replace_based_on_dict() to an existing rmd
 }

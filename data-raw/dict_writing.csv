@@ -1,4 +1,5 @@
 old,new
+exp, experiment
 exp1,Experiment 1
 exp2,Experiment 2
 exp3,Experiment 3
@@ -7,4 +8,12 @@ subjects',participants'
 diff_accent,the different accent condition
 same_accent,the same accent condition
 same_person,the same person condition
+diff_style, the different style condition
+same_style, the same style condition
 the the,the
+info,information
+vot,VOT
+vots,VOTs
+shorter_vot_accent,shorter-vot-accent
+longer_vot_accent,longer-vot-accent
+english,English

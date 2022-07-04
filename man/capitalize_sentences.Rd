@@ -13,19 +13,7 @@ capitalize_sentences(script)
 character
 }
 \description{
-duh
-}
-\details{
-specifically
-capitalize the very first character of entire doc (innocuous to rmd yaml header)
-,
-find ". ", "! ", "' ", "'" in text and capitalize the first character following them
-,
-find "\n" in text exempting those in rchunk and in yaml header and capitalize the first character following them
-,
-find " '", "='", capitalize the first character following them, second case is for fig.cap in r chunk header
-.
-This doesn't take of after """. so try to use single quote instead
+capitalize the first letter of the first word in each sentence
 }
 \examples{
 capitalize_sentences("how are you? thank you. i am fine. and you?")

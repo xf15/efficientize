@@ -27,11 +27,11 @@ Efficientize writing and programming
 * `formalize_writing()` applies
   * `capitalize_sentences()` to
     * capitalize the first letter of the first word in each sentence
-  * `capitalize_headings()` to 
+  * `capitalize_headings()` to
     * capitalize the first letter of the first word in rmd headings
   * `replace_based_on_dict()` to
     * replace shorthands with full spellings see https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv
-    
+
 You can supply the source file name only to change the source file directly, e.g., `formalize_writing("informal_paper.Rmd")` or in addition supply a destination file name to create a new file, e.g.,     
 
 ```
@@ -44,8 +44,13 @@ see [formal_paper.Rmd](https://github.com/xf15/efficientize/tree/main/vignettes/
   * `replace_based_on_dict()` to
     * modify psyexp script used for a single list to be used as script for task combining all lists see https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv
 
+### dicts are updated when README.md is updated
 
-## Templates 
+```{r}
+source('data-raw/create_dict.R')
+```
+
+## Templates
 
 
 ```
@@ -65,42 +70,50 @@ https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/manuscri
 https://bookdown.org/yihui/rmarkdown/template-structure.html
 
 
- 
+
 ## Installation
 
-I don't expect this to ever be on CRAN
+files in `/inst` with prefix my_ need to be synced to your own files 
 
-```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("xf15/efficientize")
+so fork, clone
+
+throughout this project, replace
+
+```
+/Users/xzfang/Github/efficientize/
 ```
 
-## Documentation 
+with your repo path
 
-https://xf15.github.io/efficientize/index.html
+```
+devtools::install()
+```
 
+## Documentation
 
-## todo 
+https://xf15.github.io/efficientize/
+
+## todo
 
 efficientize::update_psychopy_script_for_multiple_lists("/Users/xzfang/Github/ideal_adapter/interface_exp2.psyexp", "/Users/xzfang/Github/ideal_adapter/ideal_adapter_exp2_List_All/interface_exp2_list_all.psyexp")
 
-only work when in project environment 
+only work when in project environment
 
-go through all check warnings and note, rmd papers should be in inst/doc 
+go through all check warnings and note, rmd papers should be in inst/doc
 
-why no https://github.com/xf15/efficientize/blob/main/R/data.R for psyexp 
+why no https://github.com/xf15/efficientize/blob/main/R/data.R for psyexp
 
 
-## note 
+## note
 
-copy first line of roxygen function comment for function here 
+copy first line of roxygen function comment for function here
 
 the rest lines of roxygen comment should be copied from inline comments, replacing #' with # otherwise get all code recognized as roxygen get @export may only span a single line, supposed to be already fixed though https://github.com/r-lib/roxygen2/issues/737
 
 
 
-str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector 
+str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector
 
-substr 
+substr
 
 https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf
