@@ -135,7 +135,7 @@ clean
 backup_zotero
 }
 
-cd Github
+cd ~/Github
 
 # to run a script called test.m, then do matlab -batch "test"
 alias matlab="/Applications/MATLAB_R2020b.app/bin/matlab -nojvm -nodesktop"
