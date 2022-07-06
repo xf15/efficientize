@@ -35,6 +35,9 @@ function inter(){
 srun --partition=short --mem=6G --time="$@":00:00 --pty bash 
 }
 
+alias my_q='squeue -u xfang4'
+
+module add singularity 
 
 function push(){
 git pull 
