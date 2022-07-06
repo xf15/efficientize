@@ -31,6 +31,10 @@ if [ -f "$HOME/.profile" ]; then
     . "$HOME/.profile"
 fi
 
+function inter(){
+srun --partition=fast.q --mem=6G --time="$@":00:00 --pty bash 
+}
+
 
 function push(){
 git pull 
