@@ -32,7 +32,7 @@ if [ -f "$HOME/.profile" ]; then
 fi
 
 function inter(){
-srun --partition=fast.q --mem=6G --time="$@":00:00 --pty bash 
+srun --partition=short --mem=6G --time="$@":00:00 --pty bash 
 }
 
 
