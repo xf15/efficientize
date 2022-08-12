@@ -31,11 +31,11 @@ if [ -f "$HOME/.profile" ]; then
     . "$HOME/.profile"
 fi
 
-if [[$PWD = '/Users/xzfang']]; then
+if [[ $PWD = '/Users/xzfang' ]]; then
   cd /Users/xzfang/Github/
 fi
 
-if [[$PWD = '/home/xfang4/']]; then
+if [[ $PWD = '/home/xfang4/' ]]; then
   cd /home/xfang4/data/Github/
 fi
 
