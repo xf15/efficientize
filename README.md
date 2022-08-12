@@ -74,6 +74,74 @@ with your repo path
 
     devtools::install()
 
+## update
+
+this pkg needs to be updated as your own files are updated
+
+``` r
+devtools::install()
+#> openssl   (2.0.1        -> 2.0.2       ) [CRAN]
+#> Rcpp      (1.0.8.3      -> 1.0.9       ) [CRAN]
+#> rlang     (1.0.2        -> 1.0.4       ) [CRAN]
+#> generics  (0.1.2        -> 0.1.3       ) [CRAN]
+#> stringi   (1.7.6        -> 1.7.8       ) [CRAN]
+#> sass      (0.4.1        -> 0.4.2       ) [CRAN]
+#> tinytex   (0.39         -> 0.40        ) [CRAN]
+#> bslib     (0.3.1        -> 0.4.0       ) [CRAN]
+#> rmarkdown (84dfc6674... -> d23e47901...) [GitHub]
+#> Skipping 1 packages ahead of CRAN: highr
+#> Installing 8 packages: openssl, Rcpp, rlang, generics, stringi, sass, tinytex, bslib
+#> 
+#>   There are binary versions available but the source versions are later:
+#>       binary source needs_compilation
+#> sass   0.4.1  0.4.2              TRUE
+#> bslib  0.3.1  0.4.0             FALSE
+#> 
+#> 
+#> The downloaded binary packages are in
+#>  /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpeptQkM/downloaded_packages
+#> installing the source packages 'sass', 'bslib'
+#> Downloading GitHub repo rstudio/rmarkdown@HEAD
+#> Skipping 1 packages ahead of CRAN: highr
+#> * checking for file ‘/private/var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T/RtmpeptQkM/remotesf1b78dcb242/rstudio-rmarkdown-d23e479/DESCRIPTION’ ... OK
+#> * preparing ‘rmarkdown’:
+#> * checking DESCRIPTION meta-information ... OK
+#> * checking for LF line-endings in source and make files and shell scripts
+#> * checking for empty or unneeded directories
+#> Removed empty directory ‘rmarkdown/tests/manual’
+#> Removed empty directory ‘rmarkdown/tools’
+#> * building ‘rmarkdown_2.14.3.tar.gz’
+#> 
+#> * checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ... OK
+#> * preparing ‘efficientize’:
+#> * checking DESCRIPTION meta-information ... OK
+#> * checking for LF line-endings in source and make files and shell scripts
+#> * checking for empty or unneeded directories
+#> * building ‘efficientize_0.0.0.9000.tar.gz’
+#> 
+#> Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \
+#>   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpeptQkM/efficientize_0.0.0.9000.tar.gz \
+#>   --install-tests 
+#> Loading required package: usethis
+#> * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’
+#> * installing *source* package ‘efficientize’ ...
+#> ** using staged installation
+#> ** R
+#> ** data
+#> *** moving datasets to lazyload DB
+#> ** inst
+#> ** tests
+#> ** byte-compile and prepare package for lazy loading
+#> ** help
+#> *** installing help indices
+#> ** building package indices
+#> ** installing vignettes
+#> ** testing if installed package can be loaded from temporary location
+#> ** testing if installed package can be loaded from final location
+#> ** testing if installed package keeps a record of temporary installation path
+#> * DONE (efficientize)
+```
+
 ## Documentation
 
 <https://xf15.github.io/efficientize/>

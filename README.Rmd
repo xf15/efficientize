@@ -44,11 +44,6 @@ see [formal_paper.Rmd](https://github.com/xf15/efficientize/tree/main/vignettes/
   * `replace_based_on_dict()` to
     * modify psyexp script used for a single list to be used as script for task combining all lists see https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv
 
-### dicts are updated when README.md is updated
-
-```{r}
-source('data-raw/create_dict.R')
-```
 
 ## Templates
 
@@ -88,6 +83,17 @@ with your repo path
 ```
 devtools::install()
 ```
+
+## update 
+this pkg needs to be updated as your own files are updated 
+first, update dict
+updates in inst files will apply once pkg reinstalled 
+```{r}
+source('data-raw/create_dict.R')
+
+devtools::install()
+```
+
 
 ## Documentation
 

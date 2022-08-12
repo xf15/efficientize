@@ -15,13 +15,13 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-# because 
+# because
 # When invoking a login shell bash will looks for its config files in this order:
 
 # [0] ~/.bash_profile
 # [1] ~/.bash_login
 # [2] ~/.profile
-# for ubuntu 
+# for ubuntu
 
 if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
@@ -31,16 +31,25 @@ if [ -f "$HOME/.profile" ]; then
     . "$HOME/.profile"
 fi
 
+if [[$PWD = '/Users/xzfang']]; then
+  cd /Users/xzfang/Github/
+fi
+
+if [[$PWD = '/home/xfang4/']]; then
+  cd /home/xfang4/data/Github/
+fi
+
+
 function inter(){
-srun --partition=short --mem=6G --time="$@":00:00 --pty bash 
+srun --partition=short --mem=6G --time="$@":00:00 --pty bash
 }
 
 alias my_q='squeue -u xfang4'
 
-module add singularity 
+module add singularity
 
 function push(){
-git pull 
+git pull
 text=`git remote -v` &&
 num_lines=`git remote -v | wc -l` &&
 if [ "$num_lines" -ge 4 ]; then
@@ -56,13 +65,13 @@ if [ "$num_lines" -ge 4 ]; then
 	git pull github master
 	git push github
     fi
-fi 
+fi
 git add -A &&
 if [ -z "$1" ];then
   git commit -m"insignificant commit"
 else
   git commit -m"$@"
-fi 
+fi
 git push
 if [ "$num_lines" -ge 4 ]; then
     if [[ $text == *pav* ]]; then
@@ -77,7 +86,7 @@ if [ "$num_lines" -ge 4 ]; then
 	git pull github master
 	git push github
     fi
-fi 
+fi
 }
 
 
@@ -142,7 +151,6 @@ clean
 backup_zotero
 }
 
-cd ~/Github
 
 # to run a script called test.m, then do matlab -batch "test"
 alias matlab="/Applications/MATLAB_R2020b.app/bin/matlab -nojvm -nodesktop"

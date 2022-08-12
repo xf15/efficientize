@@ -26,11 +26,12 @@ add_papers = function(manuscript_file_name, exp_repo = '.'){
   tBib = bib2df::bib2df(system.file('files_for_efficientize_exp_repo_template', 'my_zotero.bib', package='efficientize')) %>%
     dplyr::filter(BIBTEXKEY %in% bibtext_citation_key) %>%
     dplyr::select(c('BIBTEXKEY', 'FILE'))
-
+  # print(tBib)
   num_paper = nrow(tBib)
   # num_paper = 1
   for(iPaper in 1:num_paper){
     # "/Users/xzfang/Zotero/storage/8MMCHSDQ/Xie et al. - 2021 - Cross-talker generalization in the perception of n.pdf;/Users/xzfang/Zotero/storage/WYBI5ITL/Supplementary-information.pdf;/Users/xzfang/Zotero/storage/KIYF8YJ3/2021-71835-001.html"
+    # print(stringr::str_split(tBib$FILE[iPaper], ';'))
     iPdf_paper = stringr::str_split(tBib$FILE[iPaper], ';')[[1]][1] # sometimes there are multiple files, seems that pdf goes before html
     eval(parse(text = paste0('file.copy(from="',
                              iPdf_paper,
