@@ -25,6 +25,9 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/add_papers.html</loc>
+  </url>
+  <url>
     <loc>/reference/capitalize_headings.html</loc>
   </url>
   <url>
@@ -41,8 +44,5 @@
   </url>
   <url>
     <loc>/reference/replace_based_on_dict.html</loc>
-  </url>
-  <url>
-    <loc>/reference/update_psychopy_script_for_multiple_lists.html</loc>
   </url>
 </urlset>
