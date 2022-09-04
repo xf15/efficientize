@@ -31,22 +31,36 @@ if [ -f "$HOME/.profile" ]; then
     . "$HOME/.profile"
 fi
 
+
 if [[ $PWD = '/Users/xzfang' ]]; then
   cd /Users/xzfang/Github/
 fi
 
-if [[ $PWD = '/home/xfang4' ]]; then
-  cd /home/xfang4/data/Github/
+# need to be separated from above because terminals in my window group are project dir
+if [[ "${PWD##/Users/xzfang}" != "${PWD}" ]]; then
+  function matlab(){
+    /Applications/MATLAB_R2020b.app/bin/matlab -nodisplay -nodesktop -nosplash -r $@
+  }
+  export -f matlab
 fi
 
 
-function inter(){
-srun --partition=short --mem=6G --time="$@":00:00 --pty bash
-}
+if [[ $PWD = '/home/xfang4' ]]; then
+  cd /home/xfang4/data/Github/
 
-alias my_q='squeue -u xfang4'
+  function inter(){
+  srun --partition=short --mem=6G --time="$@":00:00 --pty bash
+  }
 
-module add singularity
+  alias my_q='squeue -u xfang4'
+
+  module add singularity
+
+  module add matlab
+fi
+
+
+
 
 function push(){
 git pull

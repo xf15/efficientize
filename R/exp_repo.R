@@ -1,17 +1,17 @@
-#' export papers from zotero to /relevant_papers of efficientize_exp_repo_template
+#' export pdf of papers cited in manuscript from zotero to /relevant_papers of https://github.com/xf15/efficientize_exp_repo_template
 #'
 #'
 #' @examples
-#' add_papers('second_year_paper.Rmd', '/Users/xzfang/Github/talker_general_representation')
-#' add_papers('version1.Rmd', '/Users/xzfang/Github/ding2016')
+#' add_papers('second_year_paper.Rmd')
+#' add_papers('version1.Rmd')
 #'
 #' @importFrom magrittr "%>%"
 #'
 #' @export
-add_papers = function(manuscript_file_name, exp_repo = '.'){
-  manuscript_full_file_name = file.path(exp_repo, 'manuscript', manuscript_file_name)
+add_papers = function(manuscript_file_name){
 
-  script = readChar(manuscript_full_file_name, file.info(manuscript_full_file_name)$size)
+
+  script = readChar(manuscript_file_name, file.info(manuscript_file_name)$size)
   bibtext_citation_key = stringr::str_sub(
     unique(
       stringr::str_match_all(script, pattern='@\\w+_\\w+')[[1]] # returns list
@@ -37,7 +37,7 @@ add_papers = function(manuscript_file_name, exp_repo = '.'){
                              iPdf_paper,
                              '",
                              to="',
-                             file.path(exp_repo, 'relevant_papers', paste0(tBib$BIBTEXKEY[iPaper], '.pdf')),
+                             file.path('..', 'relevant_papers', paste0(tBib$BIBTEXKEY[iPaper], '.pdf')),
                              '")')))
   }
 

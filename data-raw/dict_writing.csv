@@ -1,19 +1,29 @@
 old,new
-exp, experiment
 exp1,Experiment 1
 exp2,Experiment 2
 exp3,Experiment 3
+exp4,Experiment 4
 subjects,participants
+subj,participants
+each subj,each participant
 subjects',participants'
-diff_accent,the different accent condition
-same_accent,the same accent condition
-same_person,the same person condition
-diff_style, the different style condition
-same_style, the same style condition
 the the,the
+english,English
 info,information
 vot,VOT
 vots,VOTs
+lip,LIP
+pfc,PFC
+fmri,fMRI
+eeg,EEG
+v1,V1
+v2,V2
+v4,V4
+diff_accent,the different accent condition
+same_accent,the same accent condition
+same_person,the same person condition
+diff_style,the different style condition
+same_style,the same style condition
 shorter_vot_accent,shorter-vot-accent
 longer_vot_accent,longer-vot-accent
-english,English
+num_of_dist,the number of distractors
