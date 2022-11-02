@@ -80,11 +80,29 @@
 <div class="section level3">
 <h3 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
 </h3>
-<p>in writing_help.R * <code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies * <code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to * replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a> * <code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to * capitalize the first letter of the first word in each sentence * <code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to * capitalize the first letter of the first word in rmd headings</p>
+<p>in writing_help.R</p>
+<ul><li>
+<code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies<ul>
+<li>
+<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to<ul><li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
+</li></ul>
+</li>
+<li>
+<code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to<ul><li>capitalize the first letter of the first word in each sentence</li></ul>
+</li>
+<li>
+<code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to<ul><li>capitalize the first letter of the first word in rmd headings</li></ul>
+</li>
+</ul>
+</li></ul>
 <p>You can supply the source file name only to change the source file directly, e.g., <code>formalize_writing("informal_paper.Rmd")</code> or in addition supply a destination file name to create a new file, e.g.,</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">formalize_writing</span>(<span class="st">"informal_paper.Rmd"</span>, <span class="st">"formal_paper.Rmd"</span>)</span></code></pre></div>
 <p>for a demo see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/informal_paper.Rmd" class="external-link">informal_paper.Rmd</a> see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd" class="external-link">formal_paper.Rmd</a></p>
-<p>in exp_repo.R * <code><a href="reference/add_papers.html">add_papers()</a></code> * export pdf of papers cited in manuscript from zotero to /relevant_papers of <a href="https://github.com/xf15/efficientize_exp_repo_template" class="external-link uri">https://github.com/xf15/efficientize_exp_repo_template</a></p>
+<p>in exp_repo.R</p>
+<ul><li>
+<code><a href="reference/add_papers.html">add_papers()</a></code><ul><li>export pdf of papers cited in manuscript from zotero to /relevant_papers of <a href="https://github.com/xf15/efficientize_exp_repo_template" class="external-link uri">https://github.com/xf15/efficientize_exp_repo_template</a>
+</li></ul>
+</li></ul>
 <p>here is how i use all of these functions <a href="https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R" class="external-link uri">https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R</a></p>
 </div>
 <div class="section level3">
@@ -133,14 +151,14 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Skipping 1 packages ahead of CRAN: highr</span></span>
 <span><span class="co">#&gt;      checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ...  ✔  checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’</span></span>
-<span><span class="co">#&gt;   ─  preparing ‘efficientize’: (689ms)</span></span>
+<span><span class="co">#&gt;   ─  preparing ‘efficientize’: (618ms)</span></span>
 <span><span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
 <span><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
 <span><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
 <span><span class="co">#&gt;   ─  building ‘efficientize_0.0.0.9000.tar.gz’</span></span>
 <span><span class="co">#&gt;      </span></span>
 <span><span class="co">#&gt; Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \</span></span>
-<span><span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpkRUsra/efficientize_0.0.0.9000.tar.gz \</span></span>
+<span><span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpMbTdZG/efficientize_0.0.0.9000.tar.gz \</span></span>
 <span><span class="co">#&gt;   --install-tests </span></span>
 <span><span class="co">#&gt; * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’</span></span>
 <span><span class="co">#&gt; * installing *source* package ‘efficientize’ ...</span></span>
