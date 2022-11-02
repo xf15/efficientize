@@ -27,6 +27,7 @@ Efficientize writing and programming
 ### Functions
 
 in writing_help.R
+
 * `formalize_writing()` applies
   * `replace_based_on_dict()` to
     * replace shorthands with full spellings see https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv
@@ -46,6 +47,7 @@ see [informal_paper.Rmd](https://github.com/xf15/efficientize/tree/main/vignette
 see [formal_paper.Rmd](https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd)
 
 in exp_repo.R
+
 * `add_papers()`
   * export pdf of papers cited in manuscript from zotero to /relevant_papers of https://github.com/xf15/efficientize_exp_repo_template
 

@@ -9,13 +9,18 @@ Efficientize writing and programming
 
 ### Functions
 
-in writing\_help.R \* `formalize_writing()` applies \*
-`replace_based_on_dict()` to \* replace shorthands with full spellings
-see
-<https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv>
-\* `capitalize_sentences()` to \* capitalize the first letter of the
-first word in each sentence \* `capitalize_headings()` to \* capitalize
-the first letter of the first word in rmd headings
+in writing\_help.R
+
+  - `formalize_writing()` applies
+      - `replace_based_on_dict()` to
+          - replace shorthands with full spellings see
+            <https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv>
+      - `capitalize_sentences()` to
+          - capitalize the first letter of the first word in each
+            sentence
+      - `capitalize_headings()` to
+          - capitalize the first letter of the first word in rmd
+            headings
 
 You can supply the source file name only to change the source file
 directly, e.g., `formalize_writing("informal_paper.Rmd")` or in addition
@@ -28,9 +33,12 @@ for a demo see
 see
 [formal\_paper.Rmd](https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd)
 
-in exp\_repo.R \* `add_papers()` \* export pdf of papers cited in
-manuscript from zotero to /relevant\_papers of
-<https://github.com/xf15/efficientize_exp_repo_template>
+in exp\_repo.R
+
+  - `add_papers()`
+      - export pdf of papers cited in manuscript from zotero to
+        /relevant\_papers of
+        <https://github.com/xf15/efficientize_exp_repo_template>
 
 here is how i use all of these functions
 <https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R>
@@ -95,14 +103,14 @@ source('data-raw/create_dict.R')
 devtools::install()
 #> Skipping 1 packages ahead of CRAN: highr
 #>      checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ...  ✔  checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’
-#>   ─  preparing ‘efficientize’: (689ms)
+#>   ─  preparing ‘efficientize’: (618ms)
 #>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
 #>   ─  building ‘efficientize_0.0.0.9000.tar.gz’
 #>      
 #> Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \
-#>   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpkRUsra/efficientize_0.0.0.9000.tar.gz \
+#>   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpMbTdZG/efficientize_0.0.0.9000.tar.gz \
 #>   --install-tests 
 #> * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’
 #> * installing *source* package ‘efficientize’ ...

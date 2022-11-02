@@ -153,6 +153,7 @@ R --slave -e "rmarkdown::render('index.Rmd')" &&
 cd ../../ &&
 #tried got rscript not found
 #Rscript.exe -e "blogdown::build_site()" &&
+# R --slave -e "blogdown::serve_site()" && # this has no effect, only in rstudio, when rmd saved, reknit html, has to manually knit, as did for cv
 R --slave -e "blogdown::build_site()" &&
 cd ../xf15.github.io &&
 rm -rf * &&

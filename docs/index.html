@@ -43,7 +43,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -75,85 +75,91 @@
 </h1></div>
 <p>Efficientize writing and programming</p>
 <div class="section level2">
-<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+<h2 id="what-it-does">what it does<a class="anchor" aria-label="anchor" href="#what-it-does"></a>
 </h2>
-<ul>
-<li>
-<code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies
-<ul>
-<li>
-<code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to
-<ul>
-<li>capitalize the first letter of the first word in each sentence</li>
-</ul>
-</li>
-<li>
-<code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to
-<ul>
-<li>capitalize the first letter of the first word in rmd headings</li>
-</ul>
-</li>
-<li>
-<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to
-<ul>
-<li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<div class="section level3">
+<h3 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h3>
+<p>in writing_help.R * <code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies * <code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to * replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a> * <code><a href="reference/capitalize_sentences.html">capitalize_sentences()</a></code> to * capitalize the first letter of the first word in each sentence * <code><a href="reference/capitalize_headings.html">capitalize_headings()</a></code> to * capitalize the first letter of the first word in rmd headings</p>
 <p>You can supply the source file name only to change the source file directly, e.g., <code>formalize_writing("informal_paper.Rmd")</code> or in addition supply a destination file name to create a new file, e.g.,</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">formalize_writing</span>(<span class="st">"informal_paper.Rmd"</span>, <span class="st">"formal_paper.Rmd"</span>)</span></code></pre></div>
-<p>see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/informal_paper.Rmd" class="external-link">informal_paper.Rmd</a> see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd" class="external-link">formal_paper.Rmd</a></p>
-<ul>
-<li>
-<code><a href="reference/update_psychopy_script_for_multiple_lists.html">update_psychopy_script_for_multiple_lists()</a></code> applies
-<ul>
-<li>
-<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to
-<ul>
-<li>modify psyexp script used for a single list to be used as script for task combining all lists see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_psyexp.csv</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>for a demo see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/informal_paper.Rmd" class="external-link">informal_paper.Rmd</a> see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd" class="external-link">formal_paper.Rmd</a></p>
+<p>in exp_repo.R * <code><a href="reference/add_papers.html">add_papers()</a></code> * export pdf of papers cited in manuscript from zotero to /relevant_papers of <a href="https://github.com/xf15/efficientize_exp_repo_template" class="external-link uri">https://github.com/xf15/efficientize_exp_repo_template</a></p>
+<p>here is how i use all of these functions <a href="https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R" class="external-link uri">https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R</a></p>
 </div>
-<div class="section level2">
-<h2 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
-</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"default"</span>, <span class="at">template_description =</span> <span class="st">"default template"</span>)</span>
+<div class="section level3">
+<h3 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
+</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"scratch"</span>, <span class="at">template_description =</span> <span class="st">"for exploration"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"slides"</span>, <span class="at">template_description =</span> <span class="st">"template for slides"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_rmarkdown_template</span>(<span class="at">template_name =</span> <span class="st">"manuscript"</span>, <span class="at">template_description =</span> <span class="st">"template for manuscript"</span>)</span></code></pre></div>
-<p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/default/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/default/skeleton/skeleton.Rmd</a></p>
+<p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/scratch/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/scratch/skeleton/skeleton.Rmd</a></p>
 <p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/slides/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/slides/skeleton/skeleton.Rmd</a></p>
 <p><a href="https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/manuscript/skeleton/skeleton.Rmd" class="external-link uri">https://github.com/xf15/efficientize/blob/main/inst/rmarkdown/templates/manuscript/skeleton/skeleton.Rmd</a></p>
-<p><a href="https://bookdown.org/yihui/rmarkdown/template-structure.html" class="external-link uri">https://bookdown.org/yihui/rmarkdown/template-structure.html</a></p>
+</div>
 </div>
 <div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+<h2 id="how-to-use">how to use<a class="anchor" aria-label="anchor" href="#how-to-use"></a>
 </h2>
-<p>I don’t expect this to ever be on CRAN</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"xf15/efficientize"</span><span class="op">)</span></code></pre></div>
+<div class="section level3">
+<h3 id="start">start<a class="anchor" aria-label="anchor" href="#start"></a>
+</h3>
+<p>you want to define your own <code>dict</code> in <code>/data-raw</code></p>
+<p>you need to sync your own zotero bib to that in <code>/inst/files_for_efficientize_exp_repo_template</code></p>
+<p>you need to <code>ln</code> your own bash files to those in <code>/inst/files_for_unrelated_housekeeping</code></p>
+<p>so fork, clone</p>
+<p>in your text editor, throughout this project, replace</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span>Users<span class="sc">/</span>xzfang<span class="sc">/</span>Github<span class="sc">/</span>efficientize<span class="sc">/</span></span></code></pre></div>
+<p>with your repo path</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
-</h2>
-<p><a href="https://xf15.github.io/efficientize/index.html" class="external-link uri">https://xf15.github.io/efficientize/index.html</a></p>
+<div class="section level3">
+<h3 id="update">update<a class="anchor" aria-label="anchor" href="#update"></a>
+</h3>
+<p>as all those customized files mentioned above get updated, this pkg need to be reinstalled</p>
+<p>do</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(base) Xinzhus<span class="sc">-</span>MacBook<span class="sc">-</span>Pro<span class="sc">:</span>efficientize xzfang<span class="sc">$</span> Rscript update.R</span></code></pre></div>
+<p>which</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">"README.Rmd"</span>)</span></code></pre></div>
+<p>which</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="st">'data-raw/create_dict.R'</span><span class="op">)</span>
+<span class="co">#&gt; ✔ Setting active project to '/Users/xzfang/Github/efficientize'</span>
+<span class="co">#&gt; ✔ Saving 'dict_writing' to 'data/dict_writing.rda'</span>
+<span class="co">#&gt; • Document your data (see 'https://r-pkgs.org/data.html')</span>
+<span class="co">#&gt; ✔ Saving 'dict_psyexp' to 'data/dict_psyexp.rda'</span>
+<span class="co">#&gt; • Document your data (see 'https://r-pkgs.org/data.html')</span>
+
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Skipping 1 packages ahead of CRAN: highr</span>
+<span class="co">#&gt;      checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ...  ✔  checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’</span>
+<span class="co">#&gt;   ─  preparing ‘efficientize’: (689ms)</span>
+<span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span>
+<span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span>
+<span class="co">#&gt;   ─  checking for empty or unneeded directories</span>
+<span class="co">#&gt;   ─  building ‘efficientize_0.0.0.9000.tar.gz’</span>
+<span class="co">#&gt;      </span>
+<span class="co">#&gt; Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \</span>
+<span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpkRUsra/efficientize_0.0.0.9000.tar.gz \</span>
+<span class="co">#&gt;   --install-tests </span>
+<span class="co">#&gt; * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’</span>
+<span class="co">#&gt; * installing *source* package ‘efficientize’ ...</span>
+<span class="co">#&gt; ** using staged installation</span>
+<span class="co">#&gt; ** R</span>
+<span class="co">#&gt; ** data</span>
+<span class="co">#&gt; *** moving datasets to lazyload DB</span>
+<span class="co">#&gt; ** inst</span>
+<span class="co">#&gt; ** tests</span>
+<span class="co">#&gt; ** byte-compile and prepare package for lazy loading</span>
+<span class="co">#&gt; ** help</span>
+<span class="co">#&gt; *** installing help indices</span>
+<span class="co">#&gt; ** building package indices</span>
+<span class="co">#&gt; ** installing vignettes</span>
+<span class="co">#&gt; ** testing if installed package can be loaded from temporary location</span>
+<span class="co">#&gt; ** testing if installed package can be loaded from final location</span>
+<span class="co">#&gt; ** testing if installed package keeps a record of temporary installation path</span>
+<span class="co">#&gt; * DONE (efficientize)</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="development-note">development note<a class="anchor" aria-label="anchor" href="#development-note"></a>
-</h2>
-<p>copy first line of roxygen function comment for function here</p>
-<p>the rest lines of roxygen comment should be copied from inline comments, replacing #’ with # otherwise get all code recognized as roxygen get @export may only span a single line, supposed to be already fixed though <a href="https://github.com/r-lib/roxygen2/issues/737" class="external-link uri">https://github.com/r-lib/roxygen2/issues/737</a></p>
-<p>consistent function documentation among readme, writing_help.rmd, writing_help.r inside and outside function</p>
-<p>str_locate_all gives named matrix, find dealt with as matrix searching nrow, rest dealt with as vector</p>
-<p>substr</p>
-<p><a href="https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf" class="external-link uri">https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf</a></p>
 </div>
 </div>
   </div>
@@ -195,7 +201,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

@@ -607,12 +607,35 @@ body {
 <p>Efficientize writing and programming</p>
 <h2 id="what-it-does">what it does</h2>
 <h3 id="functions">Functions</h3>
-<p>in writing_help.R * <code>formalize_writing()</code> applies * <code>replace_based_on_dict()</code> to * replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a> * <code>capitalize_sentences()</code> to * capitalize the first letter of the first word in each sentence * <code>capitalize_headings()</code> to * capitalize the first letter of the first word in rmd headings</p>
+<p>in writing_help.R</p>
+<ul>
+<li><code>formalize_writing()</code> applies
+<ul>
+<li><code>replace_based_on_dict()</code> to
+<ul>
+<li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a></li>
+</ul></li>
+<li><code>capitalize_sentences()</code> to
+<ul>
+<li>capitalize the first letter of the first word in each sentence</li>
+</ul></li>
+<li><code>capitalize_headings()</code> to
+<ul>
+<li>capitalize the first letter of the first word in rmd headings</li>
+</ul></li>
+</ul></li>
+</ul>
 <p>You can supply the source file name only to change the source file directly, e.g., <code>formalize_writing(&quot;informal_paper.Rmd&quot;)</code> or in addition supply a destination file name to create a new file, e.g.,</p>
 <pre><code>formalize_writing(&quot;informal_paper.Rmd&quot;, &quot;formal_paper.Rmd&quot;)
 </code></pre>
 <p>for a demo see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/informal_paper.Rmd">informal_paper.Rmd</a> see <a href="https://github.com/xf15/efficientize/tree/main/vignettes/formal_paper.Rmd">formal_paper.Rmd</a></p>
-<p>in exp_repo.R * <code>add_papers()</code> * export pdf of papers cited in manuscript from zotero to /relevant_papers of <a href="https://github.com/xf15/efficientize_exp_repo_template">https://github.com/xf15/efficientize_exp_repo_template</a></p>
+<p>in exp_repo.R</p>
+<ul>
+<li><code>add_papers()</code>
+<ul>
+<li>export pdf of papers cited in manuscript from zotero to /relevant_papers of <a href="https://github.com/xf15/efficientize_exp_repo_template">https://github.com/xf15/efficientize_exp_repo_template</a></li>
+</ul></li>
+</ul>
 <p>here is how i use all of these functions <a href="https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R">https://github.com/xf15/efficientize_exp_repo_template/blob/main/manuscript/render_manuscript.R</a></p>
 <h3 id="templates">Templates</h3>
 <pre><code>usethis::use_rmarkdown_template(template_name = &quot;scratch&quot;, template_description = &quot;for exploration&quot;)
@@ -653,14 +676,14 @@ usethis::use_rmarkdown_template(template_name = &quot;manuscript&quot;, template
 <a class="sourceLine" id="cb7-8" data-line-number="8">devtools<span class="op">::</span><span class="kw">install</span>()</a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt; Skipping 1 packages ahead of CRAN: highr</span></a>
 <a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;      checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ...  ✔  checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’</span></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt;   ─  preparing ‘efficientize’: (689ms)</span></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt;   ─  preparing ‘efficientize’: (618ms)</span></a>
 <a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></a>
 <a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></a>
 <a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></a>
 <a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">#&gt;   ─  building ‘efficientize_0.0.0.9000.tar.gz’</span></a>
 <a class="sourceLine" id="cb7-16" data-line-number="16"><span class="co">#&gt;      </span></a>
 <a class="sourceLine" id="cb7-17" data-line-number="17"><span class="co">#&gt; Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \</span></a>
-<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpkRUsra/efficientize_0.0.0.9000.tar.gz \</span></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpMbTdZG/efficientize_0.0.0.9000.tar.gz \</span></a>
 <a class="sourceLine" id="cb7-19" data-line-number="19"><span class="co">#&gt;   --install-tests </span></a>
 <a class="sourceLine" id="cb7-20" data-line-number="20"><span class="co">#&gt; * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’</span></a>
 <a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co">#&gt; * installing *source* package ‘efficientize’ ...</span></a>
