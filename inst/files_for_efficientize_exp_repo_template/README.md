@@ -36,3 +36,11 @@ i think it's the standard bibliography setting that says each reference starts o
 or let's generate pdf, copy bib from pdf and paste to rmd, suppress bib in csl.
 
 ^ never did that
+
+## apa 7th
+
+changed 
+disambiguate-add-givenname="true"
+to 
+disambiguate-add-givenname="false"
+

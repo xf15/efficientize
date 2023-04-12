@@ -1,12 +1,13 @@
 ---
 title: "manuscript"
+author: "Xinzhu Fang"
 output:
   pdf_document:
-    toc: no
+    toc: yes
     latex_engine: xelatex
     number_sections: true
 bibliography: [/Users/xzfang/Github/efficientize/inst/files_for_efficientize_exp_repo_template/my_zotero.bib, /Users/xzfang/Github/efficientize/inst/files_for_efficientize_exp_repo_template/my_manual.bib]
-csl: /Users/xzfang/Github/efficientize/inst/files_for_efficientize_exp_repo_template/apa-7th-edition.csl  
+csl: /Users/xzfang/Github/efficientize/inst/files_for_efficientize_exp_repo_template/apa-7th-edition.csl
 ---
 
 ```{r setup, include=FALSE}

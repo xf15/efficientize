@@ -4,3 +4,6 @@
 .Ruserdata
 inst/doc
 note.md
+
+data/*my*
+data-raw/*my*

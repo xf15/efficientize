@@ -3,7 +3,7 @@
 \docType{data}
 \name{dict_writing}
 \alias{dict_writing}
-\title{dictionary replace_based_on_dict refers to}
+\title{dictionary replace_in_selective_text_for_all_entries_in_all_dicts refers to}
 \format{
 dataframe
 }

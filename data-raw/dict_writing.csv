@@ -1,45 +1,15 @@
 old,new
- i , I
 the the,the
 english,English
- exp1, Experiment 1
- exp2, Experiment 2
- exp3, Experiment 3
- exp4, Experiment 4
+french,French
+spanish,Spanish
+chinese,Chinese
+american,American
+dutch,Dutch
+exp1,Experiment 1
+exp2,Experiment 2
+exp3,Experiment 3
+exp4,Experiment 4
 subject,participant
-/rt,response time
+rt,response time
 sd,SD
-fmri,fMRI
-eeg,EEG
-hz,Hz
-db,dB
-aep,AEP
-psychopy,PsychoPy
-psychojs,PsychoJS
-matlab,MATLAB
-eeglab,EEGLAB
-python,Python
-isi,ISI
-iti,ITI
-vot,VOT
-vots,VOTs
-cv,CV
-lip,LIP
-pfc,PFC
-v1,V1
-v2,V2
-v4,V4
-topdown,top-down
-bottomup,bottom-up
-popout,pop-out
-diff_accent,the different accent condition
-same_accent,the same accent condition
-same_person,the same person condition
-diff_style,the different style condition
-same_style,the same style condition
-shorter_vot_accent,shorter-vot-accent
-longer_vot_accent,longer-vot-accent
-num_of_dist,the number of distractors
-nct,noisy channel theory
-nc,noisy channel
-bi,Bayesian inference

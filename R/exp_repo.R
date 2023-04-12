@@ -9,7 +9,8 @@
 #'
 #' @export
 add_papers = function(manuscript_file_name){
-
+  # remove all existing papers, that way papers later excluded get removed
+  unlink(file.path('..', 'relevant_papers', '*'))
 
   script = readChar(manuscript_file_name, file.info(manuscript_file_name)$size)
   bibtext_citation_key = stringr::str_sub(

@@ -12,7 +12,7 @@ Efficientize writing and programming
 in writing\_help.R
 
   - `formalize_writing()` applies
-      - `replace_based_on_dict()` to
+      - `replace_in_selective_text_for_all_entries_in_all_dicts()` to
           - replace shorthands with full spellings see
             <https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv>
       - `capitalize_sentences()` to
@@ -93,24 +93,27 @@ which
 which
 
 ``` r
-source('data-raw/create_dict.R')
+source("data-raw/create_dict.R")
 #> ✔ Setting active project to '/Users/xzfang/Github/efficientize'
 #> ✔ Saving 'dict_writing' to 'data/dict_writing.rda'
 #> • Document your data (see 'https://r-pkgs.org/data.html')
 #> ✔ Saving 'dict_psyexp' to 'data/dict_psyexp.rda'
 #> • Document your data (see 'https://r-pkgs.org/data.html')
+#> ✔ Saving 'dict_my_writing' to 'data/dict_my_writing.rda'
+#> • Document your data (see 'https://r-pkgs.org/data.html')
 
 devtools::install()
-#> Skipping 1 packages ahead of CRAN: highr
+#> 
+#> ── R CMD build ──────────────────────────────────────────────────────────────────────────────────────
 #>      checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ...  ✔  checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’
-#>   ─  preparing ‘efficientize’: (618ms)
+#>   ─  preparing ‘efficientize’: (765ms)
 #>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 #>   ─  checking for LF line-endings in source and make files and shell scripts
 #>   ─  checking for empty or unneeded directories
 #>   ─  building ‘efficientize_0.0.0.9000.tar.gz’
 #>      
 #> Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \
-#>   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpMbTdZG/efficientize_0.0.0.9000.tar.gz \
+#>   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpJ3ArwS/efficientize_0.0.0.9000.tar.gz \
 #>   --install-tests 
 #> * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’
 #> * installing *source* package ‘efficientize’ ...

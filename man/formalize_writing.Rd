@@ -2,7 +2,7 @@
 % Please edit documentation in R/writing_help.R
 \name{formalize_writing}
 \alias{formalize_writing}
-\title{apply functions capitalize_headings(), capitalize_sentences(), replace_based_on_dict() to an existing rmd}
+\title{apply functions capitalize_headings(), capitalize_sentences(), replace_in_selective_text_for_all_entries_in_all_dicts() to an existing rmd}
 \usage{
 formalize_writing(filename, output_filename = filename)
 }
@@ -10,5 +10,5 @@ formalize_writing(filename, output_filename = filename)
 \item{filename}{}
 }
 \description{
-apply functions capitalize_headings(), capitalize_sentences(), replace_based_on_dict() to an existing rmd
+apply functions capitalize_headings(), capitalize_sentences(), replace_in_selective_text_for_all_entries_in_all_dicts() to an existing rmd
 }

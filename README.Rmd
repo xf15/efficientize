@@ -29,7 +29,7 @@ Efficientize writing and programming
 in writing_help.R
 
 * `formalize_writing()` applies
-  * `replace_based_on_dict()` to
+  * `replace_in_selective_text_for_all_entries_in_all_dicts()` to
     * replace shorthands with full spellings see https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv
   * `capitalize_sentences()` to
     * capitalize the first letter of the first word in each sentence
@@ -116,7 +116,7 @@ rmarkdown::render("README.Rmd")
 which
 
 ```{r}
-source('data-raw/create_dict.R')
+source("data-raw/create_dict.R")
 
 devtools::install()
 ```
