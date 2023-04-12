@@ -84,7 +84,7 @@
 <ul><li>
 <code><a href="reference/formalize_writing.html">formalize_writing()</a></code> applies<ul>
 <li>
-<code><a href="reference/replace_based_on_dict.html">replace_based_on_dict()</a></code> to<ul><li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
+<code><a href="reference/replace_based_on_dict.html">replace_in_selective_text_for_all_entries_in_all_dicts()</a></code> to<ul><li>replace shorthands with full spellings see <a href="https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv" class="external-link uri">https://github.com/xf15/efficientize/blob/main/data-raw/dict_writing.csv</a>
 </li></ul>
 </li>
 <li>
@@ -141,24 +141,27 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>rmarkdown<span class="op">::</span><span class="kw">render</span>(<span class="st">"README.Rmd"</span>)</span></code></pre></div>
 <p>which</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="st">'data-raw/create_dict.R'</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html" class="external-link">source</a></span><span class="op">(</span><span class="st">"data-raw/create_dict.R"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ✔ Setting active project to '/Users/xzfang/Github/efficientize'</span></span>
 <span><span class="co">#&gt; ✔ Saving 'dict_writing' to 'data/dict_writing.rda'</span></span>
 <span><span class="co">#&gt; • Document your data (see 'https://r-pkgs.org/data.html')</span></span>
 <span><span class="co">#&gt; ✔ Saving 'dict_psyexp' to 'data/dict_psyexp.rda'</span></span>
 <span><span class="co">#&gt; • Document your data (see 'https://r-pkgs.org/data.html')</span></span>
+<span><span class="co">#&gt; ✔ Saving 'dict_my_writing' to 'data/dict_my_writing.rda'</span></span>
+<span><span class="co">#&gt; • Document your data (see 'https://r-pkgs.org/data.html')</span></span>
 <span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Skipping 1 packages ahead of CRAN: highr</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── R CMD build ──────────────────────────────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;      checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’ ...  ✔  checking for file ‘/Users/xzfang/Github/efficientize/DESCRIPTION’</span></span>
-<span><span class="co">#&gt;   ─  preparing ‘efficientize’: (618ms)</span></span>
+<span><span class="co">#&gt;   ─  preparing ‘efficientize’: (765ms)</span></span>
 <span><span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information</span></span>
 <span><span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span></span>
 <span><span class="co">#&gt;   ─  checking for empty or unneeded directories</span></span>
 <span><span class="co">#&gt;   ─  building ‘efficientize_0.0.0.9000.tar.gz’</span></span>
 <span><span class="co">#&gt;      </span></span>
 <span><span class="co">#&gt; Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \</span></span>
-<span><span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpMbTdZG/efficientize_0.0.0.9000.tar.gz \</span></span>
+<span><span class="co">#&gt;   /var/folders/tl/nv1vx7q12q3gljk30t38d6s80000gn/T//RtmpJ3ArwS/efficientize_0.0.0.9000.tar.gz \</span></span>
 <span><span class="co">#&gt;   --install-tests </span></span>
 <span><span class="co">#&gt; * installing to library ‘/Library/Frameworks/R.framework/Versions/4.1/Resources/library’</span></span>
 <span><span class="co">#&gt; * installing *source* package ‘efficientize’ ...</span></span>
@@ -219,7 +222,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

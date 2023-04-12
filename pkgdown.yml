@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 2.0.6
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   formal_paper: formal_paper.html
   informal_paper: informal_paper.html
-last_built: 2022-11-02T03:00Z
+last_built: 2023-04-12T19:24Z
 
